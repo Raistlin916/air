@@ -1,4 +1,6 @@
 import React from 'react'
+import FullPage from './components/Fullpage'
+import './index.scss'
 
 export default () =>
-  <div>hello world</div>
+  <FullPage />
