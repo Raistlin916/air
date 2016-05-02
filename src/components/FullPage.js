@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import { Motion, spring } from 'react-motion'
 import Section from './Section'
-import { Motion, spring } from 'react-motion';
+import SwipeReceiver from './SwipeReceiver'
 
 const springSettings = { stiffness: 170, damping: 26 }
 
@@ -45,14 +46,14 @@ export default class FullPage extends Component {
     }))
 
     return (
-      <div className="rc-fullpage-wrap">
+      <SwipeReceiver className="rc-fullpage-wrap" onSwipeUp={::this.nextPage}>
         {
           pages.map((page, index) =>
             <Motion key={index} style={sectionConfigs[index]}>
               {style =>
                 <Section
                   style={{
-                    '-webkit-transform': `translate3d(0, ${style.top}%, 0)`,
+                    WebkitTransform: `translate3d(0, ${style.top}%, 0)`,
                     transform: `translate3d(0, ${style.top}%, 0)`
                   }}
                 >
@@ -65,7 +66,7 @@ export default class FullPage extends Component {
           )
         }
         <button style={{ position: 'absolute' }} onClick={::this.nextPage}>next</button>
-      </div>
+      </SwipeReceiver>
     )
   }
 }
