@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import Section from './Section'
 import { Motion, spring } from 'react-motion';
 
-const springSettings = { stiffness: 170, damping: 26 };
-const pages = [1, 2, 3]
+const springSettings = { stiffness: 170, damping: 26 }
 
 export default class FullPage extends Component {
 
@@ -12,12 +11,19 @@ export default class FullPage extends Component {
     this.state = {
       currentPage: 0
     }
+    this.pages = [1, 2, 3]
   }
 
   nextPage() {
-    this.setState({
-      currentPage: this.state.currentPage + 1
-    })
+    let { currentPage } = this.state
+
+    currentPage += 1
+
+    if (currentPage >= this.pages.length) {
+      currentPage = this.pages.length - 1
+    }
+
+    this.setState({ currentPage })
   }
 
   render() {
@@ -31,13 +37,12 @@ export default class FullPage extends Component {
       textAlign: 'center'
     }
     const { currentPage } = this.state
+    const { pages } = this
     let sectionConfigs = []
 
-    sectionConfigs = pages.map(item => {
-      return {
-        top: spring((item - currentPage - 1) * 100, springSettings)
-      }
-    })
+    sectionConfigs = pages.map(item => ({
+      top: spring((item - currentPage - 1) * 100, springSettings)
+    }))
 
     return (
       <div className="rc-fullpage-wrap">
@@ -45,10 +50,14 @@ export default class FullPage extends Component {
           pages.map((page, index) =>
             <Motion key={index} style={sectionConfigs[index]}>
               {style =>
-                <Section style={{ transform: `translate3d(0, ${style.top}%, 0)` }}>
+                <Section
+                  style={{
+                    '-webkit-transform': `translate3d(0, ${style.top}%, 0)`,
+                    transform: `translate3d(0, ${style.top}%, 0)`
+                  }}
+                >
                   <div style={contentStyle}>
                     section{page}
-                    <p>{style.top}</p>
                   </div>
                 </Section>
               }
