@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "dev": "node webpack-dev-server.js"
+    "dev": "NODE_ENV=dev node webpack-dev-server.js",
+    "windows_dev": "set NODE_ENV=dev&node webpack-dev-server.js"
   },
   "author": "gaokai",
   "license": "ISC",
@@ -30,6 +31,7 @@
     "normalize.css": "^4.1.1",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
+    "react-motion": "^0.4.3",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
     "webpack": "^1.13.0",

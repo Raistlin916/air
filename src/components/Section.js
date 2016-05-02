@@ -1,4 +1,6 @@
 import React from 'react'
 
-export default () =>
-  <section className="rc-fullpage-section">Section</section>
+export default ({ children, ...rest }) =>
+  <section className="rc-fullpage-section" {...rest}>
+    {children}
+  </section>
