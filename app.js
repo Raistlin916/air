@@ -8,4 +8,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, './index.html'))
 })
 
-app.listen(3000)
+var port = process.env.VCAP_APP_PORT || 3000
+app.listen(port, function() {
+  console.log('server run at port ' + port)
+})
