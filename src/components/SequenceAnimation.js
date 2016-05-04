@@ -5,7 +5,8 @@ export default class SequenceAnimation extends Component {
 
   static propTypes = {
     springSetting: PropTypes.object,
-    children: PropTypes.array
+    children: PropTypes.array.isRequired,
+    onRest: PropTypes.func
   };
 
   constructor(props) {
@@ -23,15 +24,15 @@ export default class SequenceAnimation extends Component {
 
   render() {
     const { animationIndex } = this.state
-    const { children } = this.props
+    const { children, springSetting, onRest } = this.props
     return (
       <div>
         {
           children.map((fn, index) =>
             <Motion
               defaultStyle={{ percent: 0 }}
-              style={{ percent: spring(animationIndex >= index ? 1 : 0) }}
-              onRest={::this.playNext}
+              style={{ percent: spring(animationIndex >= index ? 1 : 0, springSetting) }}
+              onRest={index === children.length - 1 ? onRest : ::this.playNext}
               key={index}
             >{style => fn(style)}</Motion>
           )

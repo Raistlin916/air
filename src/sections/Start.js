@@ -12,7 +12,7 @@ export default class Start extends Component {
   render() {
     return (
       <div>
-        <SequenceAnimation>
+        <SequenceAnimation onRest={() => this.props.setDeaf(false)} springSetting={springSetting}>
         {
           [
             style => <h1 style={{ opacity: style.percent }}>LA RIVE GAUCHE</h1>,
