@@ -22,6 +22,12 @@ export default class FullPage extends Component {
     }
   }
 
+  setDeaf(bool) {
+    this.setState({
+      isDeaf: bool
+    })
+  }
+
   nextPage() {
     if (this.state.isDeaf) {
       return;
@@ -38,26 +44,29 @@ export default class FullPage extends Component {
     this.setState({ currentPage })
   }
 
-  setDeaf(bool) {
-    this.setState({
-      isDeaf: bool
-    })
-  }
-
   render() {
     const { currentPage, isDeaf } = this.state
-    const { pages } = this.props
+    let { pages } = this.props
     let sectionConfigs = []
 
-    sectionConfigs = pages.map((item, index) => ({
-      top: spring((index - currentPage) * 100)
+    pages = pages.map((page, index) => ({ page, index }))
+
+    if (currentPage < 2) {
+      pages = [pages[0], pages[1], pages[2]]
+    } else {
+      pages = pages.slice(currentPage - 1, currentPage + 2)
+    }
+
+    sectionConfigs = pages.map(item => ({
+      top: spring((item.index - currentPage) * 100)
     }))
+
 
     return (
       <SwipeReceiver className="rc-fullpage-wrap" isDeaf={isDeaf} onSwipeUp={::this.nextPage}>
         {
-          pages.map((page, index) =>
-            <Motion key={index} style={sectionConfigs[index]}>
+          pages.map(({ page, index }, i) =>
+            <Motion key={index} style={sectionConfigs[i]}>
               {style =>
                 <Section
                   className="content-wrap"

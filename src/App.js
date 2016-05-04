@@ -7,6 +7,6 @@ import Start2 from './sections/Start2'
 import ChapterOne from './sections/ChapterOne'
 
 export default () => {
-  const pages = [Start, Start2, ChapterOne]
+  const pages = [Start, Start2, ChapterOne, Start, Start, Start, Start, Start]
   return <FullPage pages={pages} />
 }

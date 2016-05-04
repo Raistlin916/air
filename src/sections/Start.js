@@ -6,7 +6,7 @@ const springSetting = { stiffness: 100, damping: 20 }
 export default class Start extends Component {
 
   componentWillMount() {
-    this.props.setDeaf(true)
+    // this.props.setDeaf(true)
   }
 
   render() {
