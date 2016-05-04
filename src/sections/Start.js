@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Motion, spring } from 'react-motion'
 
-const springSetting = { stiffness: 100, damping: 35 }
+const springSetting = { stiffness: 100, damping: 20 }
 
 export default class Start extends Component {
   constructor(props) {

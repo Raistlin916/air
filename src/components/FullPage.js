@@ -17,11 +17,15 @@ export default class FullPage extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentPage: 0
+      currentPage: 0,
+      isDeaf: false
     }
   }
 
   nextPage() {
+    if (this.state.isDeaf) {
+      return;
+    }
     let { currentPage } = this.state
     const { pages } = this.props
 
@@ -34,8 +38,14 @@ export default class FullPage extends Component {
     this.setState({ currentPage })
   }
 
+  toggleDeaf() {
+    this.setState({
+      isDeaf: !this.state.isDeaf
+    })
+  }
+
   render() {
-    const { currentPage } = this.state
+    const { currentPage, isDeaf } = this.state
     const { pages } = this.props
     let sectionConfigs = []
 
@@ -44,7 +54,7 @@ export default class FullPage extends Component {
     }))
 
     return (
-      <SwipeReceiver className="rc-fullpage-wrap" onSwipeUp={::this.nextPage}>
+      <SwipeReceiver className="rc-fullpage-wrap" isDeaf={isDeaf} onSwipeUp={::this.nextPage}>
         {
           pages.map((page, index) =>
             <Motion key={index} style={sectionConfigs[index]}>
@@ -63,6 +73,7 @@ export default class FullPage extends Component {
           )
         }
         <button style={{ position: 'absolute' }} onClick={::this.nextPage}>next</button>
+        <button style={{ position: 'absolute', right: 0 }} onClick={::this.toggleDeaf}>{isDeaf ? 'deaf' : 'hearing'}</button>
       </SwipeReceiver>
     )
   }

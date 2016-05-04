@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react'
 
 function standardizeEvent(e) {
-  const type = e.type;
+  const type = e.type
   if (type.indexOf('touch') !== -1) {
-    const touch = e.touches[0] || e.changedTouches[0];
+    const touch = e.touches[0] || e.changedTouches[0]
     return {
       pageX: touch.pageX,
       pageY: touch.pageY,
@@ -20,13 +20,15 @@ export default class SwipeReceiver extends Component {
 
   static defaultProps = {
     onSwipeDown: () => {},
-    onSwipeUp: () => {}
+    onSwipeUp: () => {},
+    isDeaf: false
   };
 
   static propTypes = {
     onSwipeUp: PropTypes.func,
     onSwipeDown: PropTypes.func,
-    children: PropTypes.array
+    children: PropTypes.array,
+    isDeaf: PropTypes.bool
   };
 
   constructor(props) {
@@ -41,7 +43,7 @@ export default class SwipeReceiver extends Component {
 
   handleEnd(e) {
     const event = standardizeEvent(e)
-    if (!this.startAt) {
+    if (!this.startAt || this.props.isDeaf) {
       return
     }
 
