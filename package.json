@@ -2,9 +2,12 @@
   "name": "bubble",
   "version": "1.0.0",
   "description": "bubble effect with javascript canvas",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "build": "webpack",
+    "build": "NODE_ENV=production webpack",
+    "windows_build": "set NODE_ENV=production&webpack",
+    "start": "NODE_ENV=production node app.ks",
+    "windows_start": "set NODE_ENV=production&node app.js",
     "dev": "NODE_ENV=dev node webpack-dev-server.js",
     "windows_dev": "set NODE_ENV=dev&node webpack-dev-server.js"
   },
@@ -37,5 +40,8 @@
     "style-loader": "^0.13.0",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "express": "^4.13.4"
   }
 }
