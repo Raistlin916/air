@@ -11,6 +11,10 @@ export default class Start extends Component {
     }
   }
 
+  componentWillMount() {
+    this.props.setDeaf(true)
+  }
+
   playNext() {
     let { animationIndex } = this.state
     animationIndex += 1

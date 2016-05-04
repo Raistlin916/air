@@ -38,9 +38,9 @@ export default class FullPage extends Component {
     this.setState({ currentPage })
   }
 
-  toggleDeaf() {
+  setDeaf(bool) {
     this.setState({
-      isDeaf: !this.state.isDeaf
+      isDeaf: bool
     })
   }
 
@@ -66,14 +66,17 @@ export default class FullPage extends Component {
                     transform: `translate3d(0, ${style.top}%, 0)`
                   }}
                 >
-                  {page}
+                  {
+                    React.createElement(page, {
+                      setDeaf: ::this.setDeaf
+                    })
+                  }
                 </Section>
               }
             </Motion>
           )
         }
         <button style={{ position: 'absolute' }} onClick={::this.nextPage}>next</button>
-        <button style={{ position: 'absolute', right: 0 }} onClick={::this.toggleDeaf}>{isDeaf ? 'deaf' : 'hearing'}</button>
       </SwipeReceiver>
     )
   }
