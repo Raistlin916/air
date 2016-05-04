@@ -13,7 +13,7 @@ new WebpackDevServer(webpack(config), {
   headers: {
     'Access-Control-Allow-Origin': '*',
   },
-}).listen(8081, '127.0.0.1', err => {
+}).listen(8081, err => {
   if (err) {
     console.log(err);
   }

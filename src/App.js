@@ -6,12 +6,9 @@ import Start from './sections/Start'
 import Start2 from './sections/Start2'
 import ChapterOne from './sections/ChapterOne'
 
-const preventScroll = e => e.preventDefault()
-window.addEventListener('touchstart', preventScroll)
-window.addEventListener('touchmove', preventScroll)
-window.addEventListener('touchend', preventScroll)
-window.addEventListener('touchcancel', preventScroll)
 
+const preventScroll = e => e.preventDefault()
+window.addEventListener('touchmove', preventScroll)
 
 export default () => {
   const pages = [Start, Start2, ChapterOne, Start, Start, Start, Start, Start]
