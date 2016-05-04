@@ -9,8 +9,7 @@
     "start": "NODE_ENV=production node app.ks",
     "windows_start": "set NODE_ENV=production&node app.js",
     "dev": "NODE_ENV=dev node webpack-dev-server.js",
-    "windows_dev": "set NODE_ENV=dev&node webpack-dev-server.js",
-    "postinstall": "webpack"
+    "windows_dev": "set NODE_ENV=dev&node webpack-dev-server.js"
   },
   "author": "gaokai",
   "license": "ISC",
