@@ -25,7 +25,7 @@ const config = {
       loaders: ['babel']
     }, {
       test: /\.s?css$/,
-      loaders: ['style', 'css', 'sass'],
+      loaders: ['style', 'css?-minimize', 'sass']
     }]
   },
   plugins: [

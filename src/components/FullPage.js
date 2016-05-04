@@ -1,48 +1,46 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { Motion, spring } from 'react-motion'
 import Section from './Section'
 import SwipeReceiver from './SwipeReceiver'
 
-const springSettings = { stiffness: 170, damping: 26 }
 
 export default class FullPage extends Component {
+
+  static defaultProps = {
+    pages: []
+  };
+
+  static propTypes = {
+    pages: PropTypes.array
+  };
 
   constructor(props) {
     super(props)
     this.state = {
       currentPage: 0
     }
-    this.pages = [1, 2, 3]
   }
 
   nextPage() {
     let { currentPage } = this.state
+    const { pages } = this.props
 
     currentPage += 1
 
-    if (currentPage >= this.pages.length) {
-      currentPage = this.pages.length - 1
+    if (currentPage >= pages.length) {
+      currentPage = pages.length - 1
     }
 
     this.setState({ currentPage })
   }
 
   render() {
-    const contentStyle = {
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      background: 'white',
-      textAlign: 'center'
-    }
     const { currentPage } = this.state
-    const { pages } = this
+    const { pages } = this.props
     let sectionConfigs = []
 
-    sectionConfigs = pages.map(item => ({
-      top: spring((item - currentPage - 1) * 100, springSettings)
+    sectionConfigs = pages.map((item, index) => ({
+      top: spring((index - currentPage) * 100)
     }))
 
     return (
@@ -52,14 +50,13 @@ export default class FullPage extends Component {
             <Motion key={index} style={sectionConfigs[index]}>
               {style =>
                 <Section
+                  className="content-wrap"
                   style={{
                     WebkitTransform: `translate3d(0, ${style.top}%, 0)`,
                     transform: `translate3d(0, ${style.top}%, 0)`
                   }}
                 >
-                  <div style={contentStyle}>
-                    section{page}
-                  </div>
+                  {page}
                 </Section>
               }
             </Motion>
