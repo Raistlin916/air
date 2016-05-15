@@ -11,6 +11,6 @@ const preventScroll = e => e.preventDefault()
 window.addEventListener('touchmove', preventScroll)
 
 export default () => {
-  const pages = [Start, Start2, ChapterOne, Start, Start, Start, Start, Start]
+  const pages = [Start, Start2, ChapterOne]
   return <FullPage pages={pages} />
 }
