@@ -43,7 +43,12 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "autoprefixer": "^6.3.6",
+    "babel-polyfill": "^6.8.0",
     "compression": "^1.6.1",
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "postcss-loader": "^0.9.1",
+    "precss": "^1.4.0",
+    "react-lite": "^0.15.11"
   }
 }
