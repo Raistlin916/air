@@ -1,9 +1,14 @@
 import React from 'react'
 import ScreenAdapter from './ScreenAdapter'
 
-export default ({ children, ...rest }) =>
-  <ScreenAdapter>
-    <section className="rc-fullpage-section" {...rest}>
-      {children}
+export default ({ children, active, ...rest }) => {
+  const klass = 'rc-fullpage-section' + (active ? ' active' : '')
+  return (
+    <section {...rest} className={klass}>
+      <ScreenAdapter>
+        {children}
+      </ScreenAdapter>
     </section>
-  </ScreenAdapter>
+  )
+}
+

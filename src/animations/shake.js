@@ -3,7 +3,8 @@ import React, { Component, PropTypes } from 'react'
 export default class ShakeAnimation extends Component {
 
   static propTypes = {
-    delay: PropTypes.number
+    delay: PropTypes.number,
+    delayBetweenRound: PropTypes.number
   };
 
   constructor(props) {
@@ -12,7 +13,10 @@ export default class ShakeAnimation extends Component {
     this.state = {
       step: 0
     }
-    this.sequence = [[0, 0], [3, 3, 1], [3, 0, 0], [3, -3, -1], [3, 0, 0], [0, 3, 1], [0, 0]]
+    this.sequence = [
+      [0, 0], [2, 2, 1], [2, 0, 0], [2, -2, -1], [2, 0, 0], [0, 2, 1], [0, 0],
+      [0, 0], [3, 3, 1], [3, 0, 0], [3, -3, -1], [3, 0, 0], [0, 3, 1], [0, 0]
+    ]
   }
 
   componentDidMount() {
@@ -24,10 +28,15 @@ export default class ShakeAnimation extends Component {
   }
 
   start() {
+    this.setState({
+      step: 0
+    })
+
     const round = () => {
       const current = this.state.step + 1
       if (current === this.sequence.length) {
-        this.finish()
+        this.finish();
+        this.tid = setTimeout(::this.start, this.props.delayBetweenRound)
         return;
       }
       this.setState({
@@ -52,7 +61,8 @@ export default class ShakeAnimation extends Component {
     const style = {
       transform: `translate3d(${styles[0]}px, ${styles[1]}px, 0) rotate(${rotate}deg)`,
       WebkitTransform: `translate3d(${styles[0]}px, ${styles[1]}px, 0) rotate(${rotate}deg)`,
-      transformOrigin: '50% 100px'
+      transformOrigin: '50% 50px',
+      WebkitTransformOrigin: '50% 50px'
     }
 
     return (

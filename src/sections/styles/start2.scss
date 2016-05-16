@@ -1,0 +1,57 @@
+.section-start2-bg {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/assets/start2_bg.png');
+}
+
+.section-start2-people {
+  left: 0;
+  top: 0;
+  width: 320px;
+  height: 506px;
+  background-image: url('/assets/start2_people.png');
+  transform: translate3d(20px, 5px, 0);
+}
+
+.section-start2-haze {
+  left: 30px;
+  top: 360px;
+  width: 190px;
+  height: 121px;
+  background-image: url('/assets/haze.png');
+  transform: translate3d(50px, 10px, 0);
+}
+
+
+
+.active {
+  .section-start2-people {
+    animation: start2-people-sliding 5s ease-out .5s forwards;
+  }
+  .section-start2-haze {
+    animation: start2-haze-sliding 7s ease-out .5s forwards;
+  }
+}
+
+
+@keyframes start2-people-sliding {
+  0% {
+    transform: translate3d(20px, 5px, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes start2-haze-sliding {
+  0% {
+    transform: translate3d(50px, 10px, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}

@@ -1,27 +1,9 @@
-.section-start {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background-color: black;
-}
-
-
-.anm-element {
-  position: absolute;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
 .section-start-bg {
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
-  background-image: url('/assets/image1.png');
-  animation: start-bg-sliding 15s ease-out .5s forwards;
+  background-image: url('/assets/start_bg.png');
 }
 
 .oxygen-bomb {
@@ -31,16 +13,24 @@
   bottom: 0;
   width: 154px;
   height: 414px;
-  background-image: url('/assets/image2.png');
+  background-image: url('/assets/oxygen_bomb.png');
 }
 
-.haze {
-  left: 130px;
+.section-start-haze {
+  left: 120px;
   top: 220px;
   width: 190px;
   height: 121px;
   background-image: url('/assets/haze.png');
-  animation: haze-sliding 10s ease-out .5s forwards;
+}
+
+.active {
+  .section-start-bg {
+    //animation: start-bg-sliding 7s ease-out .5s forwards;
+  }
+  .section-start-haze {
+    animation: haze-sliding 5s ease-out .5s forwards;
+  }
 }
 
 @keyframes start-bg-sliding {
@@ -49,7 +39,7 @@
   }
 
   100% {
-    transform: translate3d(-10px, -7px, 0);
+    transform: translate3d(-5px, -3px, 0);
   }
 }
 

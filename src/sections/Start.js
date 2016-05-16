@@ -11,11 +11,11 @@ export default class Start extends Component {
 
   render() {
     return (
-      <div className="section-start">
+      <div>
         <div className="section-start-bg anm-element">
-          <Shake className="oxygen-bomb anm-element" delay={1500} />
+          <Shake className="oxygen-bomb anm-element" delay={1500} delayBetweenRound={3000} />
         </div>
-        <div className="haze anm-element" />
+        <div className="section-start-haze anm-element" />
       </div>
     )
   }

@@ -1,8 +1,9 @@
 import React from 'react'
+import './styles/start2.scss'
 
 export default () =>
   <div>
-    <h2>什么时候</h2>
-    <div>background</div>
-    <p>blablabla</p>
+    <div className="section-start2-bg anm-element"></div>
+    <div className="section-start2-people anm-element"></div>
+    <div className="section-start2-haze anm-element" />
   </div>
