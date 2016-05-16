@@ -6,7 +6,7 @@
   "scripts": {
     "build": "NODE_ENV=production webpack",
     "windows_build": "set NODE_ENV=production&webpack",
-    "start": "NODE_ENV=production node app.ks",
+    "start": "NODE_ENV=production node app.js",
     "windows_start": "set NODE_ENV=production&node app.js",
     "dev": "NODE_ENV=dev node webpack-dev-server.js",
     "windows_dev": "set NODE_ENV=dev&node webpack-dev-server.js",
