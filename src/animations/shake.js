@@ -12,7 +12,7 @@ export default class ShakeAnimation extends Component {
     this.state = {
       step: 0
     }
-    this.sequence = [[0, 0], [10, 10], [10, 0], [0, 10], [0, 0]]
+    this.sequence = [[0, 0], [3, 3, 1], [3, 0, 0], [3, -3, -1], [3, 0, 0], [0, 3, 1], [0, 0]]
   }
 
   componentDidMount() {
@@ -33,7 +33,7 @@ export default class ShakeAnimation extends Component {
       this.setState({
         step: current
       })
-      this.tid = setTimeout(round, 100)
+      this.tid = setTimeout(round, 70)
     }
 
     round()
@@ -47,10 +47,12 @@ export default class ShakeAnimation extends Component {
   render() {
     const { ...rest } = this.props
     const { step } = this.state
-    const coord = this.sequence[step]
+    const styles = this.sequence[step]
+    const rotate = styles[2] || 0
     const style = {
-      transform: `translate3d(${coord[0]}px, ${coord[1]}px, 0)`,
-      WebkitTransform: `translate3d(${coord[0]}px, ${coord[1]}px, 0)`
+      transform: `translate3d(${styles[0]}px, ${styles[1]}px, 0) rotate(${rotate}deg)`,
+      WebkitTransform: `translate3d(${styles[0]}px, ${styles[1]}px, 0) rotate(${rotate}deg)`,
+      transformOrigin: '50% 100px'
     }
 
     return (

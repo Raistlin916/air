@@ -1,6 +1,9 @@
 import React from 'react'
+import ScreenAdapter from './ScreenAdapter'
 
 export default ({ children, ...rest }) =>
-  <section className="rc-fullpage-section" {...rest}>
-    {children}
-  </section>
+  <ScreenAdapter>
+    <section className="rc-fullpage-section" {...rest}>
+      {children}
+    </section>
+  </ScreenAdapter>

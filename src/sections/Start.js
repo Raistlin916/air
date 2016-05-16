@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './styles/start.scss'
-import Shake from '../animations/shake'
+import Shake from '../animations/Shake'
 
 
 export default class Start extends Component {
@@ -12,7 +12,10 @@ export default class Start extends Component {
   render() {
     return (
       <div className="section-start">
-        <Shake className="oxygen-bomb" delay={500} />
+        <div className="section-start-bg anm-element">
+          <Shake className="oxygen-bomb anm-element" delay={1500} />
+        </div>
+        <div className="haze anm-element" />
       </div>
     )
   }

@@ -85,7 +85,7 @@ export default class FullPage extends Component {
             </Motion>
           )
         }
-        <button style={{ position: 'absolute' }} onClick={::this.nextPage}>next</button>
+        <button style={{ position: 'absolute', zIndex: '1000', top: 0, left: 0 }} onClick={::this.nextPage}>next</button>
       </SwipeReceiver>
     )
   }

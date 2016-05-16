@@ -4,18 +4,61 @@
   top: 0;
   right: 0;
   bottom: 0;
-  background: url('/assets/image1.jpg') no-repeat;
-  background-size: cover;
-  background-position: top center;
+  background-color: black;
 }
 
-.oxygen-bomb {
+
+.anm-element {
   position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.section-start-bg {
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
-  background: url('/assets/image2.png') no-repeat;
-  background-size: cover;
-  background-position: top center;
+  background-image: url('/assets/image1.png');
+  animation: start-bg-sliding 15s ease-out .5s forwards;
+}
+
+.oxygen-bomb {
+  left: 0;
+  top: 108px;
+  right: 0;
+  bottom: 0;
+  width: 154px;
+  height: 414px;
+  background-image: url('/assets/image2.png');
+}
+
+.haze {
+  left: 130px;
+  top: 220px;
+  width: 190px;
+  height: 121px;
+  background-image: url('/assets/haze.png');
+  animation: haze-sliding 10s ease-out .5s forwards;
+}
+
+@keyframes start-bg-sliding {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-10px, -7px, 0);
+  }
+}
+
+@keyframes haze-sliding {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(20px, 0, 0);
+  }
 }
