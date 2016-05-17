@@ -25,21 +25,12 @@
 }
 
 .active {
-  .section-start-bg {
-    //animation: start-bg-sliding 7s ease-out .5s forwards;
-  }
   .section-start-haze {
-    animation: haze-sliding 5s ease-out .5s forwards;
-  }
-}
-
-@keyframes start-bg-sliding {
-  0% {
-    transform: translate3d(0, 0, 0);
+    animation: haze-sliding .5s cubic-bezier(0, 1.4, 1, 1) .5s forwards;
   }
 
-  100% {
-    transform: translate3d(-5px, -3px, 0);
+  .oxygen-bomb {
+    animation: oxygen-bomb 2s ease-out .5s infinite alternate-reverse;
   }
 }
 
@@ -50,5 +41,19 @@
 
   100% {
     transform: translate3d(20px, 0, 0);
+  }
+}
+
+@keyframes oxygen-bomb {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  30% {
+    transform: translate3d(0, -10px, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 20px, 0);
   }
 }

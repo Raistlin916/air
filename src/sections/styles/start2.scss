@@ -28,10 +28,10 @@
 
 .active {
   .section-start2-people {
-    animation: start2-people-sliding 5s ease-out .5s forwards;
+    animation: start2-people-sliding .5s cubic-bezier(0.785, 0.135, 0.15, 0.86) .5s forwards;
   }
   .section-start2-haze {
-    animation: start2-haze-sliding 7s ease-out .5s forwards;
+    animation: start2-haze-sliding .6s cubic-bezier(0.785, 0.135, 0.15, 0.86) .5s forwards;
   }
 }
 
