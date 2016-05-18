@@ -44,10 +44,6 @@
   .oxygen-pipe {
     animation: oxygen-pipe 1s ease-out infinite alternate-reverse;
   }
-
-  .oxygen-bottle {
-    animation: oxygen-bottle .7s ease-out infinite alternate-reverse;
-  }
 }
 
 @keyframes haze-sliding {
@@ -70,12 +66,3 @@
   }
 }
 
-@keyframes oxygen-bottle {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  100% {
-    transform: translate3d(0, -10px, 0);
-  }
-}
