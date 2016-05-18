@@ -19,11 +19,12 @@
 
 .oxygen-bottle {
   left: 0;
-  top: 272px;
+  top: 262px;
   right: 0;
   bottom: 0;
   width: 154px;
   height: 249.5px;
+  z-index: 30;
   background-image: url(http://img.yzcdn.cn/public_files/2016/05/18/c667c45f5204143f282ec6ad70bc6e51.png);
 }
 
@@ -41,11 +42,11 @@
   }
 
   .oxygen-pipe {
-    animation: oxygen-pipe 2s ease-out infinite alternate-reverse;
+    animation: oxygen-pipe 1s ease-out infinite alternate-reverse;
   }
 
   .oxygen-bottle {
-    animation: oxygen-bottle 2s ease-out infinite alternate-reverse;
+    animation: oxygen-bottle .7s ease-out infinite alternate-reverse;
   }
 }
 
