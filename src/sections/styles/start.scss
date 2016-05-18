@@ -6,14 +6,25 @@
   background-image: url(http://img.yzcdn.cn/public_files/2016/05/16/16c2472d621f02762a129b340f49990f.png);
 }
 
-.oxygen-bomb {
-  left: 0;
+.oxygen-pipe {
+  left: 88px;
   top: 108px;
   right: 0;
   bottom: 0;
+  width: 36.5px;
+  height: 183px;
+  background-image: url(http://img.yzcdn.cn/public_files/2016/05/18/4b9426861b33a149021a51c3f12bbc2a.png);
+  transform-origin: top;
+}
+
+.oxygen-bottle {
+  left: 0;
+  top: 272px;
+  right: 0;
+  bottom: 0;
   width: 154px;
-  height: 414px;
-  background-image: url(http://img.yzcdn.cn/public_files/2016/05/16/5ace198eff6074bc56ffbd0d110fe7be.png);
+  height: 249.5px;
+  background-image: url(http://img.yzcdn.cn/public_files/2016/05/18/c667c45f5204143f282ec6ad70bc6e51.png);
 }
 
 .section-start-haze {
@@ -26,17 +37,21 @@
 
 .active {
   .section-start-haze {
-    animation: haze-sliding .5s cubic-bezier(0, 1.4, 1, 1) .5s forwards;
+    animation: haze-sliding .5s cubic-bezier(0, 1.4, 1, 1) 1s forwards;
   }
 
-  .oxygen-bomb {
-    animation: oxygen-bomb 2s ease-out .5s infinite alternate-reverse;
+  .oxygen-pipe {
+    animation: oxygen-pipe 2s ease-out infinite alternate-reverse;
+  }
+
+  .oxygen-bottle {
+    animation: oxygen-bottle 2s ease-out infinite alternate-reverse;
   }
 }
 
 @keyframes haze-sliding {
   0% {
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(-20px, 0, 0);
   }
 
   100% {
@@ -44,16 +59,22 @@
   }
 }
 
-@keyframes oxygen-bomb {
+@keyframes oxygen-pipe {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  100% {
+    transform: scale(1, .92);
+  }
+}
+
+@keyframes oxygen-bottle {
   0% {
     transform: translate3d(0, 0, 0);
   }
 
-  30% {
-    transform: translate3d(0, -10px, 0);
-  }
-
   100% {
-    transform: translate3d(0, 20px, 0);
+    transform: translate3d(0, -10px, 0);
   }
 }

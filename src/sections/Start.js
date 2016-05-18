@@ -12,7 +12,8 @@ export default class Start extends Component {
     return (
       <div>
         <div className="section-start-bg anm-element">
-          <div className="oxygen-bomb anm-element" delay={1500} delayBetweenRound={3000} />
+          <div className="oxygen-bottle anm-element" />
+          <div className="oxygen-pipe anm-element" />
         </div>
         <div className="section-start-haze anm-element" />
       </div>
