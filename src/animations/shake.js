@@ -14,12 +14,12 @@ export default class ShakeAnimation extends Component {
       step: 0
     }
     this.sequence = [
-      [0, 0], [-1, -2, 1],  [-1, 2, 0], [-1, 0, 0], [0, -2, -1], [0, 0]
+      [0, 0], [-1, -2, 1], [-1, 2, 0], [-1, 0, 0], [0, -2, -1], [0, 0]
     ]
   }
 
   componentDidMount() {
-    setTimeout(() => this.start(), this.props.delay)
+    setTimeout(::this.start, this.props.delay)
   }
 
   componentWillUnmount() {
@@ -41,7 +41,7 @@ export default class ShakeAnimation extends Component {
       this.setState({
         step: current
       })
-      this.tid = setTimeout(round, 70)
+      this.tid = setTimeout(round, 80)
     }
 
     round()

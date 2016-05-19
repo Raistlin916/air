@@ -1,9 +1,10 @@
 import React from 'react'
 import './styles/start2.scss'
+import AnmElement from '../components/AnmElement'
 
 export default () =>
   <div>
-    <div className="section-start2-bg anm-element"></div>
-    <div className="section-start2-people anm-element"></div>
-    <div className="section-start2-haze anm-element" />
+    <AnmElement className="section-start2-bg" />
+    <AnmElement className="section-start2-people" />
+    <AnmElement className="section-start2-haze" />
   </div>

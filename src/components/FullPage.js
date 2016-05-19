@@ -7,19 +7,27 @@ import SwipeReceiver from './SwipeReceiver'
 export default class FullPage extends Component {
 
   static defaultProps = {
-    pages: []
+    pages: [],
+    adapterType: 'cover',
+    currentPage: 0
   };
 
   static propTypes = {
-    pages: PropTypes.array
+    pages: PropTypes.array,
+    adapterType: PropTypes.string,
+    currentPage: PropTypes.number
   };
 
   constructor(props) {
     super(props)
     this.state = {
-      currentPage: 0,
+      currentPage: props.currentPage,
       isDeaf: false
     }
+  }
+
+  componentWillReceiveProps({ currentPage }) {
+    this.setState({ currentPage })
   }
 
   setDeaf(bool) {
@@ -46,7 +54,7 @@ export default class FullPage extends Component {
 
   render() {
     const { currentPage, isDeaf } = this.state
-    let { pages } = this.props
+    let { pages, adapterType } = this.props
     let sectionConfigs = []
 
     pages = pages.map((page, index) => ({ page, index }))
@@ -61,9 +69,11 @@ export default class FullPage extends Component {
       top: spring((item.index - currentPage) * 100)
     }))
 
-
     return (
-      <SwipeReceiver className="rc-fullpage-wrap" isDeaf={isDeaf} onSwipeUp={::this.nextPage}>
+      <SwipeReceiver
+        className="rc-fullpage-wrap"
+        isDeaf={isDeaf} onSwipeUp={::this.nextPage}
+      >
         {
           pages.map(({ page, index }, i) =>
             <Motion key={index} style={sectionConfigs[i]}>
@@ -74,6 +84,7 @@ export default class FullPage extends Component {
                     WebkitTransform: `translate3d(0, ${style.top}%, 0)`,
                     transform: `translate3d(0, ${style.top}%, 0)`
                   }}
+                  adapterType={adapterType}
                 >
                   {
                     React.createElement(page, {
@@ -85,7 +96,6 @@ export default class FullPage extends Component {
             </Motion>
           )
         }
-        <button style={{ position: 'absolute', zIndex: '1000', top: 0, left: 0 }} onClick={::this.nextPage}>next</button>
       </SwipeReceiver>
     )
   }
