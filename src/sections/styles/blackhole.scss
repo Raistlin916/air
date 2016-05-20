@@ -4,6 +4,7 @@
   bottom: 0;
   right: 0;
   background-image: url(http://img.yzcdn.cn/public_files/2016/05/20/972301f32c7d0526123a98c2c16c4b2b.png);
+  transform: translate3d(0, -20px, 0);
 }
 
 .blackhole-star {
@@ -47,6 +48,20 @@
   opacity: 0;
 }
 
+.blackhole-btn {
+  left: 50%;
+  top: 460px;
+  width: 171px;
+  height: 37.5px;
+  margin-left: -85.5px;
+  background-image: url(http://img.yzcdn.cn/public_files/2016/05/20/82c0025bb2e02aeae17cc476990f88b7.png);
+  box-shadow: 0 0 5px 3px rgba(255,255,255,.3);
+  border-radius: 3px;
+  opacity: 0;
+  animation: 1s blackholeBtn ease-in-out infinite alternate,
+    .7s fadeIn ease-out forwards 7.3s;
+}
+
 .active {
   .blackhole-text1 {
     animation: 1s fadeIn ease-out forwards 1s,
@@ -61,8 +76,8 @@
       1s whirlpool linear forwards 6s;
   }
 
-  .blackhole-bg {
-    animation: 2s blackHoleZoomOut linear 7s forwards;
+  .blackhole-bg.boom {
+    animation: 1s blackHoleZoomOut ease-in forwards;
   }
 }
 
@@ -93,5 +108,14 @@
 
   100% {
     transform: scale(100);
+  }
+}
+
+@keyframes blackholeBtn {
+  0% {
+    box-shadow: 0 0 5px 3px rgba(255,255,255,.3);
+  }
+  100% {
+    box-shadow: 0 0 5px 0 rgba(255,255,255,.1);
   }
 }
