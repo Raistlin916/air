@@ -12,7 +12,7 @@
   width: 320px;
   height: 506px;
   background-image: url(http://img.yzcdn.cn/public_files/2016/05/16/6c2e9be4ab4c7594c1ec15daf787e4fd.png);
-  transform: translate3d(20px, 5px, 0);
+  transform: translate3d(20px, 0, 0);
 }
 
 .section-start2-haze {
@@ -28,17 +28,29 @@
 
 .active {
   .section-start2-people {
-    animation: start2-people-sliding .5s cubic-bezier(0.785, 0.135, 0.15, 0.86) .5s forwards;
+    animation: start2-people-sliding .7s cubic-bezier(0, 1.4, 1, 1) .5s forwards;
   }
   .section-start2-haze {
-    animation: hazeBoom .5s cubic-bezier(0, 1.4, 1, 1) 1s forwards;
+    animation: hazeBoom .5s cubic-bezier(0, 1.4, 1, 1) 1.2s forwards;
   }
 }
 
 
 @keyframes start2-people-sliding {
   0% {
-    transform: translate3d(20px, 5px, 0);
+    transform: translate3d(20px, 0, 0);
+  }
+
+  30% {
+    transform: translate3d(-15px, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(10px, 0, 0);
+  }
+
+  70% {
+    transform: translate3d(-2px, 0, 0);
   }
 
   100% {
