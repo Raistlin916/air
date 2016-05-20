@@ -1,17 +1,19 @@
 .blackhole-bg {
   left: 0;
-  top: -20px;
+  top: 0;
   bottom: 0;
   right: 0;
   background-image: url(http://img.yzcdn.cn/public_files/2016/05/20/972301f32c7d0526123a98c2c16c4b2b.png);
 }
 
 .blackhole-star {
-  left: 0;
-  top: -55px;
-  bottom: 0;
-  right: 0;
-  background-image: url(http://img.yzcdn.cn/public_files/2016/05/20/4cb2dcb6454d260b7475a0620514b34e.png);
+  left: 50%;
+  top: 50%;
+  width: 649px;
+  height: 535.5px;
+  margin-left: -323.5px;
+  margin-top: -294.75px;
+  background-image: url(http://img.yzcdn.cn/public_files/2016/05/20/7e8c9f416fc2bae5e2d353a97a19c082.png);
 }
 
 .blackhole-star2 {
@@ -26,59 +28,63 @@
 .blackhole-text1 {
   left: 50%;
   margin-left: -66.75px;
-  top: 205px;
+  top: 175px;
   width: 133.5px;
   height: 128px;
   background-image: url(http://img.yzcdn.cn/public_files/2016/05/20/986ad95cab382d578726e93ae9104e5c.png);
   opacity: 0;
+  z-index: 30;
 }
 
 .blackhole-text2 {
   left: 50%;
   margin-left: -98px;
-  top: 170px;
+  top: 140px;
   width: 196px;
   height: 188px;
   background-image: url(http://img.yzcdn.cn/public_files/2016/05/20/d9f725549de477c32e1d5b0ddf58598a.png);
   opacity: 0;
+  z-index: 30;
 }
 
 .blackhole-text3 {
   left: 50%;
   margin-left: -139.75px;
-  top: 145px;
+  top: 115px;
   width: 279.5px;
   height: 242.5px;
   background-image: url(http://img.yzcdn.cn/public_files/2016/05/20/d6297ea74f15aca8d2bb552157c9660e.png);
   opacity: 0;
+  z-index: 30;
 }
 
 .blackhole-btn {
   left: 50%;
-  top: 460px;
+  top: 400px;
   width: 171px;
   height: 37.5px;
   margin-left: -85.5px;
-  background-image: url(http://img.yzcdn.cn/public_files/2016/05/20/82c0025bb2e02aeae17cc476990f88b7.png);
-  box-shadow: 0 0 5px 3px rgba(255,255,255,.3);
+  background-image: url(http://img.yzcdn.cn/public_files/2016/05/20/0e7d23b3332fdedc5403dfb5a7766e48.png);
+  box-shadow: 0 0 5px 0 rgba(255,255,255,.1);
   border-radius: 3px;
   opacity: 0;
-  animation: 1s blackholeBtn ease-in-out infinite alternate 8.5s,
-    .7s fadeIn ease-out forwards 7.3s;
+  animation:
+    .5s fadeIn ease-out forwards 7s,
+    3s blackholeBtn ease-in-out infinite alternate 8s;
 }
 
 .active {
   .blackhole-text1 {
-    animation: 1s fadeIn ease-out forwards 1s,
-      1s whirlpool linear forwards 4s;
+    animation: .3s fadeIn ease-out forwards 1s,
+      1s whirlpool ease-out forwards 3.5s;
   }
   .blackhole-text2 {
-    animation: 1s fadeIn ease-out forwards 2s,
-      1s whirlpool linear forwards 5s;
+    animation: .3s fadeIn ease-out forwards 2s,
+      1s whirlpool ease-out forwards 3.5s;
   }
   .blackhole-text3 {
-    animation: 1s fadeIn ease-out forwards 3s,
-      1s whirlpool linear forwards 6s;
+    animation: .3s fadeIn ease-out forwards 3s,
+      1s whirlpool ease-out forwards 3.5s;
   }
 
   .blackhole-bg.boom {
@@ -87,7 +93,7 @@
   }
 
   .blackhole-star {
-    animation: 2s linear blackholeStar infinite;
+    animation: 3s linear blackholeStar infinite;
   }
 }
 
@@ -125,10 +131,10 @@
 
 @keyframes blackholeBtn {
   0% {
-    box-shadow: 0 0 5px 3px rgba(255,255,255,.3);
+    box-shadow: 0 0 5px 0 rgba(255,255,255,.1);
   }
   100% {
-    box-shadow: 0 0 5px 0 rgba(255,255,255,.1);
+    box-shadow: 0 0 5px 2px rgba(255,255,255,.3);
   }
 }
 

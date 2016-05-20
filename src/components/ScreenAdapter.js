@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default props => {
-  const originSize = { width: 320, height: 568 }
+  const originSize = { width: 320, height: 524 }
   const scale = Math.min(window.screen.width, 500) / originSize.width
   const style = {
     transform: `scale(${scale})`,

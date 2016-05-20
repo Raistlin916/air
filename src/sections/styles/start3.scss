@@ -6,36 +6,60 @@
   background-image: url(http://img.yzcdn.cn/public_files/2016/05/19/5ed5c462c4d0806e07d8ae3d69c2b3f4.jpg);
 }
 
+.section-start3-cover {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 20;
+}
+
 .section-start3-haze {
   left: 10px;
   top: 400px;
   width: 190px;
   height: 121px;
   background-image: url(http://img.yzcdn.cn/public_files/2016/05/16/6ff0336216e9f1a4d9a66c906ec35b14.png);
-  transform: scale(.01);
+  transform: scale(0.01) translate3d(0, 0, 0);
+  z-index: 30;
 }
 
 
 .active {
   .section-start3-haze {
-    animation: hazeBoom .4s ease-in-out forwards .5s;
+    animation: hazeBoom .5s cubic-bezier(0, 1.4, 1, 1) 1s forwards;
+  }
+
+  .section-start3-cover {
+    animation: dim .5s linear .5s forwards;
   }
 }
 
 @keyframes hazeBoom {
   0% {
-    transform: scale(.01);
+    transform: scale(.01) translate3d(0, 0, 0);
   }
 
   70% {
-    transform: scale(1.1);
+    transform: scale(1.1) translate3d(0, 0, 0);
   }
 
   90% {
-    transform: scale(.9);
+    transform: scale(.9) translate3d(0, 0, 0);
   }
 
   100% {
-    transform: scale(1);
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes dim {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    background-color: rgba(0, 0, 0, .3);
   }
 }
