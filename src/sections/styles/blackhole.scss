@@ -8,17 +8,25 @@
 
 .blackhole-star {
   left: 0;
-  top: 0;
+  top: -55px;
   bottom: 0;
   right: 0;
-  background-image: url(http://img.yzcdn.cn/public_files/2016/05/20/fa92d2ae96f9a03f4b43699308592928.png);
+  background-image: url(http://img.yzcdn.cn/public_files/2016/05/20/4cb2dcb6454d260b7475a0620514b34e.png);
 }
 
+// .blackhole-star {
+//   left: 0;
+//   top: 108px;
+//   width: 320px;
+//   height: 320px;
+//   background-image: url(http://img.yzcdn.cn/public_files/2016/05/20/5251ffb4e07120813014fb0d3060ca75.png);
+//   border-radius: 50%;
+// }
+
 .blackhole-text1 {
-  left: 90px;
+  left: 50%;
+  margin-left: -66.75px;
   top: 205px;
-  bottom: 0;
-  right: 0;
   width: 133.5px;
   height: 128px;
   background-image: url(http://img.yzcdn.cn/public_files/2016/05/20/986ad95cab382d578726e93ae9104e5c.png);
@@ -26,10 +34,9 @@
 }
 
 .blackhole-text2 {
-  left: 65px;
-  top: 165px;
-  bottom: 0;
-  right: 0;
+  left: 50%;
+  margin-left: -98px;
+  top: 170px;
   width: 196px;
   height: 188px;
   background-image: url(http://img.yzcdn.cn/public_files/2016/05/20/d9f725549de477c32e1d5b0ddf58598a.png);
@@ -37,10 +44,9 @@
 }
 
 .blackhole-text3 {
-  left: 15px;
-  top: 140px;
-  bottom: 0;
-  right: 0;
+  left: 50%;
+  margin-left: -139.75px;
+  top: 145px;
   width: 279.5px;
   height: 242.5px;
   background-image: url(http://img.yzcdn.cn/public_files/2016/05/20/d6297ea74f15aca8d2bb552157c9660e.png);
@@ -76,7 +82,12 @@
   }
 
   .blackhole-bg.boom {
+    transform-origin: 50% 42%;
     animation: 1s blackHoleZoomOut ease-in forwards;
+  }
+
+  .blackhole-star {
+    animation: 2s linear blackholeStar infinite;
   }
 }
 
@@ -95,7 +106,7 @@
     opacity: 1;
   }
   100% {
-    transform: rotate(480deg) scale(0.01);
+    transform: rotate(360deg) scale(0.01);
     opacity: .6;
   }
 }
@@ -116,5 +127,14 @@
   }
   100% {
     box-shadow: 0 0 5px 0 rgba(255,255,255,.1);
+  }
+}
+
+@keyframes blackholeStar {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

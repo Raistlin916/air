@@ -15,6 +15,7 @@ export default class BlackHole extends Component {
 
     return (
       <AnmElement className={`blackhole-bg ${hasEnter ? 'boom' : ''}`}>
+        <AnmElement className="blackhole-star" />
         <AnmElement
           className="blackhole-btn"
           onClick={() => this.setState({ hasEnter: true })}
