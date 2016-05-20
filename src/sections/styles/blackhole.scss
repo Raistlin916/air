@@ -68,9 +68,6 @@
   box-shadow: 0 0 5px 0 rgba(255,255,255,.1);
   border-radius: 3px;
   opacity: 0;
-  animation:
-    .5s fadeIn ease-out forwards 6.5s,
-    3s blackholeBtn ease-in-out infinite alternate 8s;
 }
 
 .active {
@@ -94,6 +91,12 @@
 
   .blackhole-star {
     animation: 3s linear blackholeStar infinite;
+  }
+
+  .blackhole-btn {
+    animation:
+      .5s fadeIn ease-out forwards 5s,
+      3s blackholeBtn ease-in-out infinite alternate 6.5s;
   }
 }
 
