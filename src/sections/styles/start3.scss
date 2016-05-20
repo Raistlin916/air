@@ -21,7 +21,7 @@
   width: 190px;
   height: 121px;
   background-image: url(http://img.yzcdn.cn/public_files/2016/05/16/6ff0336216e9f1a4d9a66c906ec35b14.png);
-  transform: scale(0.01) translate3d(0, 0, 0);
+  transform: scale(0) translate3d(0, 0, 0);
   z-index: 30;
 }
 
@@ -38,7 +38,7 @@
 
 @keyframes hazeBoom {
   0% {
-    transform: scale(.01) translate3d(0, 0, 0);
+    transform: scale(0) translate3d(0, 0, 0);
   }
 
   70% {
