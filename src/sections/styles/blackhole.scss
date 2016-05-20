@@ -1,6 +1,6 @@
 .blackhole-bg {
   left: 0;
-  top: 0;
+  top: -20px;
   bottom: 0;
   right: 0;
   background-image: url(http://img.yzcdn.cn/public_files/2016/05/20/972301f32c7d0526123a98c2c16c4b2b.png);
@@ -60,7 +60,7 @@
 
 .blackhole-btn {
   left: 50%;
-  top: 400px;
+  top: 440px;
   width: 171px;
   height: 37.5px;
   margin-left: -85.5px;
@@ -69,7 +69,7 @@
   border-radius: 3px;
   opacity: 0;
   animation:
-    .5s fadeIn ease-out forwards 7s,
+    .5s fadeIn ease-out forwards 6.5s,
     3s blackholeBtn ease-in-out infinite alternate 8s;
 }
 
