@@ -1,0 +1,97 @@
+.blackhole-bg {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url(http://img.yzcdn.cn/public_files/2016/05/20/972301f32c7d0526123a98c2c16c4b2b.png);
+}
+
+.blackhole-star {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url(http://img.yzcdn.cn/public_files/2016/05/20/fa92d2ae96f9a03f4b43699308592928.png);
+}
+
+.blackhole-text1 {
+  left: 80px;
+  top: 200px;
+  bottom: 0;
+  right: 0;
+  width: 133.5px;
+  height: 128px;
+  background-image: url(http://img.yzcdn.cn/public_files/2016/05/20/986ad95cab382d578726e93ae9104e5c.png);
+  opacity: 0;
+}
+
+.blackhole-text2 {
+  left: 70px;
+  top: 160px;
+  bottom: 0;
+  right: 0;
+  width: 196px;
+  height: 188px;
+  background-image: url(http://img.yzcdn.cn/public_files/2016/05/20/d9f725549de477c32e1d5b0ddf58598a.png);
+  opacity: 0;
+}
+
+.blackhole-text3 {
+  left: 15px;
+  top: 140px;
+  bottom: 0;
+  right: 0;
+  width: 279.5px;
+  height: 242.5px;
+  background-image: url(http://img.yzcdn.cn/public_files/2016/05/20/d6297ea74f15aca8d2bb552157c9660e.png);
+  opacity: 0;
+}
+
+.active {
+  .blackhole-text1 {
+    animation: 1s fadeIn ease-out forwards 1s,
+      1s whirlpool linear forwards 4s;
+  }
+  .blackhole-text2 {
+    animation: 1s fadeIn ease-out forwards 2s,
+      1s whirlpool linear forwards 5s;
+  }
+  .blackhole-text3 {
+    animation: 1s fadeIn ease-out forwards 3s,
+      1s whirlpool linear forwards 6s;
+  }
+
+  .blackhole-bg {
+    animation: 2s blackHoleZoomOut linear 7s forwards;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes whirlpool {
+  0% {
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(480deg) scale(0.01);
+    opacity: .6;
+  }
+}
+
+@keyframes blackHoleZoomOut {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(100);
+  }
+}

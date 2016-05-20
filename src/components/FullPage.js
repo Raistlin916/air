@@ -79,7 +79,7 @@ export default class FullPage extends Component {
             <Motion key={index} style={sectionConfigs[i]}>
               {style =>
                 <Section
-                  active={currentPage === i}
+                  active={currentPage === index}
                   style={{
                     WebkitTransform: `translate3d(0, ${style.top}%, 0)`,
                     transform: `translate3d(0, ${style.top}%, 0)`

@@ -5,6 +5,7 @@ import './index.scss'
 import Start from './sections/Start'
 import Start2 from './sections/Start2'
 import Start3 from './sections/Start3'
+import BlackHole from './sections/BlackHole'
 
 
 const preventScroll = e => e.preventDefault()
@@ -22,7 +23,7 @@ export default class App extends React.Component {
   }
 
   render() {
-    const pages = [Start, Start2, Start3]
+    const pages = [Start, Start2, Start3, BlackHole]
     const { currentPage } = this.state
 
     const debug = location.hash.indexOf('debug') > 0
