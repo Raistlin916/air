@@ -1,6 +1,6 @@
 .blackhole-bg {
   left: 0;
-  top: -20px;
+  top: -40px;
   bottom: 0;
   right: 0;
   background-image: url(http://img.yzcdn.cn/public_files/2016/05/20/972301f32c7d0526123a98c2c16c4b2b.png);
@@ -28,7 +28,7 @@
 .blackhole-text1 {
   left: 50%;
   margin-left: -66.75px;
-  top: 175px;
+  top: 185px;
   width: 133.5px;
   height: 128px;
   background-image: url(http://img.yzcdn.cn/public_files/2016/05/20/986ad95cab382d578726e93ae9104e5c.png);
@@ -39,7 +39,7 @@
 .blackhole-text2 {
   left: 50%;
   margin-left: -98px;
-  top: 140px;
+  top: 150px;
   width: 196px;
   height: 188px;
   background-image: url(http://img.yzcdn.cn/public_files/2016/05/20/d9f725549de477c32e1d5b0ddf58598a.png);
@@ -50,7 +50,7 @@
 .blackhole-text3 {
   left: 50%;
   margin-left: -139.75px;
-  top: 115px;
+  top: 125px;
   width: 279.5px;
   height: 242.5px;
   background-image: url(http://img.yzcdn.cn/public_files/2016/05/20/d6297ea74f15aca8d2bb552157c9660e.png);
@@ -73,15 +73,15 @@
 .active {
   .blackhole-text1 {
     animation: .3s fadeIn ease-out forwards 1s,
-      1s whirlpool ease-out forwards 3.5s;
+      1.7s whirlpool ease-in-out forwards 3.5s;
   }
   .blackhole-text2 {
     animation: .3s fadeIn ease-out forwards 2s,
-      1s whirlpool ease-out forwards 3.5s;
+      1.9s whirlpool ease-in-out forwards 3.6s;
   }
   .blackhole-text3 {
     animation: .3s fadeIn ease-out forwards 3s,
-      1s whirlpool ease-out forwards 3.5s;
+      2.1s whirlpool ease-in-out forwards 3.7s;
   }
 
   .blackhole-bg.boom {
@@ -90,13 +90,13 @@
   }
 
   .blackhole-star {
-    animation: 3s linear blackholeStar infinite;
+    animation: 5s linear blackholeStar infinite;
   }
 
   .blackhole-btn {
     animation:
       .5s fadeIn ease-out forwards 5s,
-      3s blackholeBtn ease-in-out infinite alternate 6.5s;
+      2s blackholeBtn ease-in-out infinite alternate 5s;
   }
 }
 
@@ -137,7 +137,7 @@
     box-shadow: 0 0 5px 0 rgba(255,255,255,.1);
   }
   100% {
-    box-shadow: 0 0 5px 2px rgba(255,255,255,.3);
+    box-shadow: 0 0 5px 3px rgba(255,255,255,.3);
   }
 }
 
