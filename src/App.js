@@ -6,6 +6,11 @@ import Start from './sections/Start'
 import Start2 from './sections/Start2'
 import Start3 from './sections/Start3'
 import BlackHole from './sections/BlackHole'
+import Lung from './sections/Lung'
+import Blow from './sections/Blow'
+
+const cacheImage = new Image()
+cacheImage.src = 'http://img.yzcdn.cn/public_files/2016/05/26/d45bddcf2c2463c7c7aa324042705856.png'
 
 
 const preventScroll = e => e.preventDefault()
@@ -15,7 +20,7 @@ export default class App extends React.Component {
 
   constructor(props) {
     super(props)
-    this.pages = [Start, Start2, Start3, BlackHole]
+    this.pages = [Start, Start2, Start3, BlackHole, Lung, Blow]
     this.isDeaf = false
   }
 

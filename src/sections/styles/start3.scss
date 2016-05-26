@@ -29,11 +29,11 @@
 
 .past, .active {
   .section-start3-haze {
-    animation: hazeBoom .5s cubic-bezier(0, 1.4, 1, 1) 2.5s forwards;
+    animation: hazeBoom .5s cubic-bezier(0, 1.4, 1, 1) 2.2s forwards;
   }
 
   .section-start3-cover {
-    animation: dim .5s linear 1.5s forwards;
+    animation: dim .3s linear 1.2s forwards;
   }
 }
 
