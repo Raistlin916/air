@@ -27,7 +27,7 @@
 }
 
 
-.active {
+.past, .active {
   .section-start3-haze {
     animation: hazeBoom .5s cubic-bezier(0, 1.4, 1, 1) 2.5s forwards;
   }

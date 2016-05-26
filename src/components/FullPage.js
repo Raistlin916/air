@@ -9,52 +9,22 @@ export default class FullPage extends Component {
   static defaultProps = {
     pages: [],
     adapterType: 'cover',
-    currentPage: 0
+    currentPage: 0,
+    onPageChangeEnd: () => {}
   };
 
   static propTypes = {
     pages: PropTypes.array,
     adapterType: PropTypes.string,
-    currentPage: PropTypes.number
+    currentPage: PropTypes.number,
+    nextPage: PropTypes.func,
+    isDeaf: PropTypes.bool,
+    onPageChangeEnd: PropTypes.func
   };
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      currentPage: props.currentPage,
-      isDeaf: false
-    }
-  }
-
-  componentWillReceiveProps({ currentPage }) {
-    this.setState({ currentPage })
-  }
-
-  setDeaf(bool) {
-    this.setState({
-      isDeaf: bool
-    })
-  }
-
-  nextPage() {
-    if (this.state.isDeaf) {
-      return;
-    }
-    let { currentPage } = this.state
-    const { pages } = this.props
-
-    currentPage += 1
-
-    if (currentPage >= pages.length) {
-      currentPage = pages.length - 1
-    }
-
-    this.setState({ currentPage })
-  }
-
   render() {
-    const { currentPage, isDeaf } = this.state
-    let { pages, adapterType } = this.props
+    let { pages } = this.props
+    const { nextPage, currentPage, isDeaf, adapterType, onPageChangeEnd } = this.props
     let sectionConfigs = []
 
     pages = pages.map((page, index) => ({ page, index }))
@@ -72,28 +42,35 @@ export default class FullPage extends Component {
     return (
       <SwipeReceiver
         className="rc-fullpage-wrap"
-        isDeaf={isDeaf} onSwipeUp={::this.nextPage}
+        isDeaf={isDeaf} onSwipeUp={nextPage}
       >
         {
-          pages.map(({ page, index }, i) =>
-            <Motion key={index} style={sectionConfigs[i]}>
-              {style =>
-                <Section
-                  active={currentPage >= index}
-                  style={{
-                    WebkitTransform: `translate3d(0, ${style.top}%, 0)`,
-                    transform: `translate3d(0, ${style.top}%, 0)`
-                  }}
-                  adapterType={adapterType}
-                >
-                  {
-                    React.createElement(page, {
-                      setDeaf: ::this.setDeaf
-                    })
-                  }
-                </Section>
-              }
-            </Motion>
+          pages.map(({ page, index }, i) => {
+            const active = currentPage === index
+            const past = currentPage > index
+            return (
+              <Motion
+                key={index} style={sectionConfigs[i]}
+                onRest={() => active && onPageChangeEnd(currentPage, page)}
+              >
+                {style =>
+                  <Section
+                    active={active}
+                    past={past}
+                    style={{
+                      WebkitTransform: `translate3d(0, ${style.top}%, 0)`,
+                      transform: `translate3d(0, ${style.top}%, 0)`
+                    }}
+                    adapterType={adapterType}
+                  >
+                    {
+                      React.createElement(page)
+                    }
+                  </Section>
+                }
+              </Motion>
+            )
+          }
           )
         }
       </SwipeReceiver>

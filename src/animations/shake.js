@@ -19,7 +19,7 @@ export default class ShakeAnimation extends Component {
   }
 
   componentDidMount() {
-    setTimeout(::this.start, this.props.delay)
+    this.tid = setTimeout(::this.start, this.props.delay)
   }
 
   componentWillUnmount() {

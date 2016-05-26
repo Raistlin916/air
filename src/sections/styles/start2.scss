@@ -27,7 +27,7 @@
 
 
 
-.active {
+.past, .active {
   .section-start2-people {
     animation: start2-people-sliding .7s cubic-bezier(0, 1.4, 1, 1) .5s forwards;
   }

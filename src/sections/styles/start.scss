@@ -38,7 +38,7 @@
   transform: scale(0) translate3d(0, 0, 0);
 }
 
-.active {
+.past, .active {
   .section-start-haze {
     animation: hazeBoom .5s cubic-bezier(0, 1.4, 1, 1) 1.5s forwards;
   }

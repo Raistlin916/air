@@ -70,7 +70,7 @@
   opacity: 0;
 }
 
-.active {
+.past, .active {
   .blackhole-text1 {
     animation: .3s fadeIn ease-out forwards 1s,
       1.7s whirlpool ease-in-out forwards 3.5s;

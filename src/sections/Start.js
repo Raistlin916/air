@@ -5,11 +5,6 @@ import AnmElement from '../components/AnmElement'
 
 
 export default class Start extends Component {
-
-  componentWillMount() {
-    // this.props.setDeaf(true)
-  }
-
   render() {
     return (
       <div>
