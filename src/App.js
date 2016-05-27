@@ -12,6 +12,7 @@ import Spring from './sections/seasons/Spring'
 import Summer from './sections/seasons/Summer'
 import Autumn from './sections/seasons/Autumn'
 import Winter from './sections/seasons/Winter'
+import End from './sections/End'
 
 import ResourceLoader from './components/ResourceLoader'
 import resources from './resources.js'
@@ -25,7 +26,7 @@ export default class App extends React.Component {
 
   constructor(props) {
     super(props)
-    this.pages = [Start, Start2, Start3, BlackHole, Lung, Blow, Spring, Summer, Autumn, Winter]
+    this.pages = [Start, Start2, Start3, BlackHole, Lung, Blow, Spring, Summer, Autumn, Winter, End]
     this.isDeaf = false
     this.resourceList = resources.list
   }
@@ -43,6 +44,7 @@ export default class App extends React.Component {
   }
 
   nextPage(force) {
+    console.log(1)
     if (this.isDeaf && !force) {
       return;
     }

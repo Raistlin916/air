@@ -46,7 +46,36 @@
 }
 
 .season-winter {
-  background-image: url(http://img.yzcdn.cn/public_files/2016/05/27/3395003a459e09606eb4ed463624e665.gif);
+  background-image: url(http://img.yzcdn.cn/public_files/2016/05/28/b40c79a86f21dfcc51ae7c5485dcbabe.png);
+
+  .text {
+    width: 47.5px;
+    height: 100px;
+    top: 47px;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    background-image: url(http://img.yzcdn.cn/public_files/2016/05/28/47e3441f9e5a300b86a5a55d0a96528e.png);
+  }
+
+  .swallow {
+    top: 100px;
+    left: 0;
+    width: 48px;
+    height: 55px;
+    background-image: url(http://img.yzcdn.cn/public_files/2016/05/28/a3d0ef186bdb3218d783d2ae2f2f7cd7.png);
+    transform: translate3d(-50px, 0, 0);
+  }
+
+  .seed {
+    width: 53px;
+    height: 38px;
+    top: 140px;
+    left: 50px;
+    background-image: url(https://img.yzcdn.cn/public_files/2016/05/28/093ff6fc23c2f06dc1721a30df5f6928.png);
+    transform: scale(.3);
+    opacity: 0;
+    animation: 2s seed ease-out 2s forwards;
+  }
 }
 
 .past, .active {
@@ -54,5 +83,54 @@
     .text {
       animation: 1s fadeIn ease-out forwards 1s;
     }
+
+    .swallow {
+      animation: 2s swallow ease-in-out forwards 1.2s;
+    }
+  }
+}
+
+@keyframes swallow {
+  0% {
+    transform: translate3d(-100%, -20px, 0) scale(.8) rotate(-10deg);
+  }
+
+  50% {
+    transform: translate3d(30px, 10px, 0) scale(1) rotate(0);
+  }
+
+  55% {
+    transform: translate3d(30px, 10px, 0) scale(1) rotate(2deg);
+  }
+
+  60% {
+    transform: translate3d(30px, 10px, 0) scale(1) rotate(2deg);
+    //opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(80px, -20px, 0) scale(.8) rotate(-20deg);
+    //opacity: 0;
+  }
+}
+
+@keyframes seed {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) scale(.3) rotate(-90deg);
+  }
+  10% {
+    opacity: 1;
+    transform: translate3d(2px, 2px, 0) scale(.35) rotate(-90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(65px, 280px, 0) scale(1) rotate(0);
+  }
+}
+
+@keyframes seedLight {
+  0% {
+
   }
 }
