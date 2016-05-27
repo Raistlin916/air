@@ -5,4 +5,6 @@ import './global.scss'
 
 import App from './App.js'
 
+//import './utils/wx'
+
 ReactDom.render(<App />, document.getElementById('container'))
