@@ -36,8 +36,8 @@ export default class App extends React.Component {
     this.isDeaf = bool
   }
 
-  nextPage() {
-    if (this.isDeaf) {
+  nextPage(force) {
+    if (this.isDeaf && !force) {
       return;
     }
     let { currentPage } = this.state
