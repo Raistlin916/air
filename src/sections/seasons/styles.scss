@@ -74,7 +74,8 @@
     background-image: url(https://img.yzcdn.cn/public_files/2016/05/28/093ff6fc23c2f06dc1721a30df5f6928.png);
     transform: scale(.3);
     opacity: 0;
-    animation: 2s seed ease-out 2s forwards;
+    animation: 2s seed ease-out 2s forwards,
+      2s seedLight ease-in 4s infinite alternate;
   }
 }
 
@@ -131,6 +132,10 @@
 
 @keyframes seedLight {
   0% {
+    filter: grayscale(0);
+  }
 
+  100% {
+    filter: grayscale(1);
   }
 }
