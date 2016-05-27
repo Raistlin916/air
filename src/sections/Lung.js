@@ -17,7 +17,6 @@ export default class Lung extends Component {
   };
 
   componentDidMount() {
-    console.log(this.props.active, 'didmount')
     if (this.props.active) {
       this.init()
     }

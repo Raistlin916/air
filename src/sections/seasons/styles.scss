@@ -3,21 +3,56 @@
   left: 0;
   bottom: 0;
   right: 0;
+
+  .text {
+    opacity: 0;
+  }
 }
 
 .season-spring {
-  background-image: url(http://img.yzcdn.cn/public_files/2016/05/27/bc13cffb28570170dbcb7c621a4d7d6d.gif);
+  background-image: url(http://img.yzcdn.cn/public_files/2016/05/27/91d24541ea15ce6e168935aac795f4f3.gif);
+
+  .text {
+    width: 45px;
+    height: 95.5px;
+    right: 70px;
+    top: 110px;
+    background-image: url(http://img.yzcdn.cn/public_files/2016/05/27/3f06541065f3542a745e8e877803e9e2.png);
+  }
 }
 
 .season-summer {
-  background-image: url(http://img.yzcdn.cn/public_files/2016/05/27/c3b1faa51e16be4795d6e16148b0b22f.gif);
+  background-image: url(http://img.yzcdn.cn/public_files/2016/05/27/4d21e8ea92f3130bdd5306ccedda337a.gif);
+
+  .text {
+    width: 62px;
+    height: 129.5px;
+    top: 70px;
+    left: 130px;
+    background-image: url(http://img.yzcdn.cn/public_files/2016/05/27/541ec1b29ac416d51821b22c8a8da853.png);
+  }
 }
 
 .season-autumn {
-  background-image: url(http://img.yzcdn.cn/public_files/2016/05/27/4981bd131f7029e42cc80b3a54f8910f.gif);
+  background-image: url(http://img.yzcdn.cn/public_files/2016/05/27/2955504ef61c78c60eb762e4c74f8587.gif);
+
+  .text {
+    width: 41px;
+    height: 101px;
+    top: 47px;
+    left: 141px;
+    background-image: url(http://img.yzcdn.cn/public_files/2016/05/27/dedbd8e922401d2fbda3ae7840e81e67.png);
+  }
 }
 
 .season-winter {
   background-image: url(http://img.yzcdn.cn/public_files/2016/05/27/3395003a459e09606eb4ed463624e665.gif);
 }
 
+.past, .active {
+  .season-bg {
+    .text {
+      animation: 1s fadeIn ease-out forwards 1s;
+    }
+  }
+}
