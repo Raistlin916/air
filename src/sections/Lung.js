@@ -3,7 +3,7 @@ import { findDOMNode } from 'react-dom'
 import BubbleEffect from '../components/BubbleCanvas'
 import AnmElement from '../components/AnmElement'
 import './styles/lung.scss'
-alert(1)
+
 export default class Lung extends Component {
 
   static propTypes = {
