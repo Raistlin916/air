@@ -13,8 +13,9 @@ import Summer from './sections/seasons/Summer'
 import Autumn from './sections/seasons/Autumn'
 import Winter from './sections/seasons/Winter'
 
-const cacheImage = new Image()
-cacheImage.src = 'http://img.yzcdn.cn/public_files/2016/05/26/d45bddcf2c2463c7c7aa324042705856.png'
+import ResourceLoader from './components/ResourceLoader'
+import resources from './resources.js'
+resources.list = JSON.parse(resources.list)
 
 
 const preventScroll = e => e.preventDefault()
@@ -26,6 +27,7 @@ export default class App extends React.Component {
     super(props)
     this.pages = [Start, Start2, Start3, BlackHole, Lung, Blow, Spring, Summer, Autumn, Winter]
     this.isDeaf = false
+    this.resourceList = resources.list
   }
 
   state = {
@@ -83,6 +85,7 @@ export default class App extends React.Component {
             onClick={nextPage}
           >next</button>
         }
+        <ResourceLoader list={this.resourceList} />
       </div>
     )
   }
