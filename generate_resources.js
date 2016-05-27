@@ -2,7 +2,7 @@ const path = require('path')
 const glob = require('glob')
 const fs = require('fs')
 
-const uri_pattern = /\b((?:[a-z][\w-]+:(?:\/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’]))/ig
+const uri_pattern = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/ig
 
 const entry = {}
 const rootPath = path.join(__dirname, 'src')
@@ -19,6 +19,5 @@ files.forEach(file => {
     })
   }
 })
-
 const output = Object.keys(result).map((src, index) => ({ src, name: index }))
 fs.writeFile(path.join(__dirname, 'src/resources.js'), `export default {list: '${JSON.stringify(output)}'}`)

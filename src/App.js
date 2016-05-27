@@ -46,6 +46,9 @@ export default class App extends React.Component {
     if (this.isDeaf && !force) {
       return;
     }
+
+    this.setDeaf(false)
+
     let { currentPage } = this.state
 
     currentPage += 1

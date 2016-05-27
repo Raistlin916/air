@@ -34,6 +34,7 @@
   width: 200px;
   height: 17.5px;
   background-image: url(http://img.yzcdn.cn/public_files/2016/05/27/8ca50d4bdcfa2460d9812bab1a510ae9.png);
+  opacity: 0;
 }
 
 
@@ -44,4 +45,42 @@
   width: 82px;
   height: 14.5px;
   background-image: url(http://img.yzcdn.cn/public_files/2016/05/27/5abf1c9b77f4b6893275dc54028769c8.png);
+}
+
+.blow-bottom-action {
+  opacity: 0;
+}
+
+
+.past, .active {
+
+  .blow-text1 {
+    animation: .75s fadeIn ease-out forwards 1s;
+  }
+
+  .blow-bottom-action {
+    animation: .75s fadeIn ease-out forwards 1.5s;
+  }
+
+  .blowwed {
+    .blow-text1, .blow-bottom-action,
+    .blow-fog2, .blow-fog3 {
+      opacity: 1;
+      animation: .5s fadeOut ease-out forwards .5s;
+    }
+
+    .blow-bottom-action {
+      animation-delay: 1s;
+    }
+
+    .blow-fog3 {
+      animation-duration: 1.5s;
+      animation-delay: 1.5s;
+    }
+
+    .blow-fog2 {
+      animation-duration: 1.5s;
+      animation-delay: 3s;
+    }
+  }
 }

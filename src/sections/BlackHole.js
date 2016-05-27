@@ -14,6 +14,7 @@ export default class BlackHole extends Component {
     this.state = {
       hasEnter: true,
       showCity: false,
+      showBlackHole: true
     }
   }
 
@@ -30,35 +31,44 @@ export default class BlackHole extends Component {
   }
 
   render() {
-    const { hasEnter, showCity } = this.state
+    const { hasEnter, showCity, showBlackHole } = this.state
 
     return (
       <div className={`${hasEnter ? 'boom' : ''}`}>
-        <AnmElement className="blackhole-bg">
-          <AnmElement className="blackhole-star" />
-          <AnmElement
-            className="blackhole-btn"
-            onClick={() => this.setState({ hasEnter: true })}
-          />
-          <AnmElement className="blackhole-text1" />
-          <AnmElement className="blackhole-text2" />
-          <AnmElement className="blackhole-text3" />
-        </AnmElement>
-        <AnmElement className="blackhole-chemney">
-          {
-            showCity &&
-              <AnmElement className="blackhole-city">
-                <AnmElement className="blackhole-window" />
-              </AnmElement>
-          }
-          {
-            !showCity &&
+        {
+          showBlackHole &&
+            <AnmElement className="blackhole-bg">
+              <AnmElement className="blackhole-star" />
               <AnmElement
-                className="blackhole-hand-btn"
-                onClick={() => this.setState({ showCity: true })}
+                className="blackhole-btn"
+                onClick={() => this.setState({ hasEnter: true })}
               />
-          }
-        </AnmElement>
+              <AnmElement className="blackhole-text1" />
+              <AnmElement className="blackhole-text2" />
+              <AnmElement className="blackhole-text3" />
+            </AnmElement>
+        }
+        {
+          hasEnter &&
+            <AnmElement
+              className="blackhole-chemney"
+              onRest={() => this.setState({ showBlackHole: false })}
+            >
+              {
+                showCity &&
+                  <AnmElement className="blackhole-city">
+                    <AnmElement className="blackhole-window" />
+                  </AnmElement>
+              }
+              {
+                !showCity &&
+                  <AnmElement
+                    className="blackhole-hand-btn"
+                    onClick={() => this.setState({ showCity: true })}
+                  />
+              }
+            </AnmElement>
+        }
       </div>
     )
   }

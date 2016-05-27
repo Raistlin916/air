@@ -103,22 +103,23 @@
   top: 50%;
   width: 116.5px;
   height: 172px;
-  transform: translate3d(-50%, -30px, 0);
+  transform: translate3d(-50%, -80px, 0);
   background-image: url(http://img.yzcdn.cn/public_files/2016/05/27/bc1e644707f3a63c0066e307a1289988.png);
+  opacity: 0;
 }
 
 .past, .active {
   .blackhole-text1 {
     animation: .3s fadeIn ease-out forwards 1s,
-      1.7s whirlpool ease-in-out forwards 3.5s;
+      1s whirlpool ease-in-out forwards 3.5s;
   }
   .blackhole-text2 {
     animation: .3s fadeIn ease-out forwards 2s,
-      1.9s whirlpool ease-in-out forwards 3.6s;
+      1.5s whirlpool ease-in-out forwards 3.6s;
   }
   .blackhole-text3 {
     animation: .3s fadeIn ease-out forwards 3s,
-      2.1s whirlpool ease-in-out forwards 3.7s;
+      2s whirlpool ease-in-out forwards 3.7s;
   }
 
   .blackhole-star {
@@ -140,6 +141,10 @@
     .blackhole-chemney {
       animation: .75s blackHoleZoomIn ease-in forwards;
     }
+
+    .blackhole-hand-btn {
+      animation: .5s fadeIn ease-out forwards 2.5s;
+    }
   }
 
   .blackhole-window {
@@ -153,6 +158,15 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 

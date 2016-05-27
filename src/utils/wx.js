@@ -1,4 +1,3 @@
-alert(window.WeixinJSBridge)
 if (window.WeixinJSBridge) {
   WeixinJSBridge.on('menu:share:timeline', function(argv) {
     WeixinJSBridge.invoke('shareTimeline', {
