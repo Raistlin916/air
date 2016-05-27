@@ -1,4 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export default () =>
-  <div>Blow</div>
+export default class Blow extends Component {
+  render() {
+    return <div>Blow</div>
+  }
+}

@@ -91,9 +91,9 @@ export default class BubbleEffect {
     this.canvas.removeEventListener('mousedown', this.startListener)
     this.canvas.removeEventListener('mousemove', this.moveListener)
     this.canvas.removeEventListener('mouseup', this.endListener)
-    this.canvas.addEventListener('touchstart', this.startListener)
-    this.canvas.addEventListener('touchmove', this.moveListener)
-    this.canvas.addEventListener('touchend', this.endListener)
+    this.canvas.removeEventListener('touchstart', this.startListener)
+    this.canvas.removeEventListener('touchmove', this.moveListener)
+    this.canvas.removeEventListener('touchend', this.endListener)
     cancelAnimationFrame(this.rid)
   }
 }

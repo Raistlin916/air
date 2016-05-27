@@ -8,7 +8,8 @@ export default class Lung extends Component {
 
   static propTypes = {
     setDeaf: PropTypes.func,
-    nextPage: PropTypes.func
+    nextPage: PropTypes.func,
+    active: PropTypes.bool
   };
 
   state = {
@@ -16,13 +17,16 @@ export default class Lung extends Component {
   };
 
   componentDidMount() {
-    const canvas = findDOMNode(this).querySelector('canvas')
-    const coverImg = new Image()
-    coverImg.src = 'http://img.yzcdn.cn/public_files/2016/05/26/d45bddcf2c2463c7c7aa324042705856.png'
-    const bubbleEffect = new BubbleEffect(canvas, coverImg)
-    bubbleEffect.init()
+    console.log(this.props.active, 'didmount')
+    if (this.props.active) {
+      this.init()
+    }
+  }
 
-    this.props.setDeaf(true)
+  componentWillReceiveProps({ active }) {
+    if (active) {
+      this.init()
+    }
   }
 
   onTouch() {
@@ -31,6 +35,20 @@ export default class Lung extends Component {
         showBtn: true
       })
     }, 2000)
+  }
+
+  init() {
+    if (this.hasInit) {
+      return
+    }
+    this.hasInit = true
+    const canvas = findDOMNode(this).querySelector('canvas')
+    const coverImg = new Image()
+    coverImg.src = 'http://img.yzcdn.cn/public_files/2016/05/26/d45bddcf2c2463c7c7aa324042705856.png'
+    const bubbleEffect = new BubbleEffect(canvas, coverImg)
+    bubbleEffect.init()
+
+    this.props.setDeaf(true)
   }
 
   render() {

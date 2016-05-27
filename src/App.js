@@ -8,6 +8,10 @@ import Start3 from './sections/Start3'
 import BlackHole from './sections/BlackHole'
 import Lung from './sections/Lung'
 import Blow from './sections/Blow'
+import Spring from './sections/seasons/Spring'
+import Summer from './sections/seasons/Summer'
+import Autumn from './sections/seasons/Autumn'
+import Winter from './sections/seasons/Winter'
 
 const cacheImage = new Image()
 cacheImage.src = 'http://img.yzcdn.cn/public_files/2016/05/26/d45bddcf2c2463c7c7aa324042705856.png'
@@ -20,7 +24,7 @@ export default class App extends React.Component {
 
   constructor(props) {
     super(props)
-    this.pages = [Start, Start2, Start3, BlackHole, Lung, Blow]
+    this.pages = [Start, Start2, Start3, BlackHole, Lung, Blow, Spring, Summer, Autumn, Winter]
     this.isDeaf = false
   }
 

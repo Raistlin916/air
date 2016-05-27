@@ -64,7 +64,10 @@ export default class FullPage extends Component {
                     adapterType={adapterType}
                   >
                     {
-                      React.createElement(page)
+                      React.cloneElement(page(), {
+                        active,
+                        past
+                      })
                     }
                   </Section>
                 }
