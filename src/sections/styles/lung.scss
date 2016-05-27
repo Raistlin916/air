@@ -17,7 +17,7 @@
   border-radius: 50%;
   background-color: #fff;
 
-  &::before, &::after {
+  .wave1, .wave2 {
     content: "";
     position: absolute;
     top: 50%;
@@ -31,7 +31,7 @@
     opacity: 0;
   }
 
-  &::before {
+  .wave2 {
     animation-delay: .7s;
   }
 }

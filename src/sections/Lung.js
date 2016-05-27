@@ -3,7 +3,7 @@ import { findDOMNode } from 'react-dom'
 import BubbleEffect from '../components/BubbleCanvas'
 import AnmElement from '../components/AnmElement'
 import './styles/lung.scss'
-
+alert(1)
 export default class Lung extends Component {
 
   static propTypes = {
@@ -54,7 +54,7 @@ export default class Lung extends Component {
     const { showBtn } = this.state
     return (
       <AnmElement className="lung-bg">
-        <canvas width={320} height={514} onTouchEnd={::this.onTouch} />
+        <canvas width={320} height={514} onTouchStart={::this.onTouch} />
         {showBtn &&
           <AnmElement className="circle-btn fadeIn" onClick={() => this.props.nextPage(true)} />}
       </AnmElement>

@@ -14,7 +14,10 @@ export default class Blow extends Component {
         <AnmElement className="blow-fog3" />
         <AnmElement className="blow-text1" />
         <AnmElement className="blow-text2" />
-        <AnmElement className="circle-btn" onClick={this.props.nextPage} />
+        <AnmElement className="circle-btn" onClick={this.props.nextPage}>
+          <div className="wave1"></div>
+          <div className="wave2"></div>
+        </AnmElement>
       </AnmElement>
     )
   }
