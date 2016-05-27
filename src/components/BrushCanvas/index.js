@@ -1,5 +1,4 @@
-import './raf_polyfill'
-import Bubble from './Bubble'
+import Brush from './Brush'
 
 function screenAdapter(coord) {
   const originSize = { width: 320, height: 514 }
@@ -26,8 +25,9 @@ function standardizeEvent(e) {
   })
 }
 
-export default class BubbleEffect {
-  constructor(canvas, bg) {
+
+export default class BrushEffect {
+  constructor(canvas, bg, onFinish) {
     this.canvas = canvas
     this.ctx = canvas.getContext('2d')
     this.bg = bg
@@ -35,10 +35,12 @@ export default class BubbleEffect {
       width: canvas.width,
       height: canvas.height
     }
+
+    this.onFinish = onFinish
   }
 
   init() {
-    this.bubble = new Bubble(this.ctx)
+    this.brush = new Brush(this.ctx, this.onFinish)
     this.initEvents()
     this.startRound()
   }
@@ -47,16 +49,15 @@ export default class BubbleEffect {
     this.moveListener = e => {
       const standardEvent = standardizeEvent(e)
       const offsetCoord = this.translatePageToOffsetCoord(standardEvent)
-      this.bubble.moveTo(offsetCoord)
+      this.brush.moveTo(offsetCoord)
     }
     this.startListener = e => {
       const standardEvent = standardizeEvent(e)
       const offsetCoord = this.translatePageToOffsetCoord(standardEvent)
-      this.bubble.blow()
-      this.bubble.moveTo(offsetCoord)
+      this.brush.moveTo(offsetCoord)
     }
-    this.endListener = e => {
-      this.bubble.loose()
+    this.endListener = () => {
+      this.brush.finishStroke()
     }
     this.canvas.addEventListener('mousedown', this.startListener)
     this.canvas.addEventListener('mousemove', this.moveListener)
@@ -93,7 +94,7 @@ export default class BubbleEffect {
     this.ctx.clearRect(0, 0, this.size.width, this.size.height)
     this.ctx.drawImage(this.bg, 0, 0, this.bg.width, this.bg.height,
       0, 0, this.size.width, this.size.height)
-    this.bubble.update(dt)
+    this.brush.update(dt)
   }
 
   destroy() {

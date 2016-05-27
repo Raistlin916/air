@@ -6,10 +6,10 @@ export default class AnmElement extends Component {
 
   static propTypes = {
     className: PropTypes.string,
-    children: PropTypes.oneOfType([
-      PropTypes.element,
-      PropTypes.array
-    ]),
+    // children: PropTypes.oneOfType([
+    //   PropTypes.element,
+    //   PropTypes.array
+    // ]),
     onRest: PropTypes.func
   };
 

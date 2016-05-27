@@ -1,21 +1,28 @@
 import React, { Component, PropTypes } from 'react'
+import { findDOMNode } from 'react-dom'
 import './styles/blackhole.scss'
 import AnmElement from '../components/AnmElement'
+import BrushCanvas from '../components/BrushCanvas'
 
 export default class BlackHole extends Component {
 
   static propTypes = {
     setDeaf: PropTypes.func,
-    active: PropTypes.bool
+    active: PropTypes.bool,
+    nextPage: PropTypes.func
   };
 
   constructor(props) {
     super(props)
     this.state = {
-      hasEnter: true,
-      showCity: false,
-      showBlackHole: true
+      hasEnter: false,
+      showBlackHole: true,
+      startBrush: false,
+      showWindow: false
     }
+
+    this.coverImg = new Image()
+    this.coverImg.src = 'http://img.yzcdn.cn/public_files/2016/05/27/6acad3f42f02b19c80a7272bee8b6d0c.png'
   }
 
   componentDidMount() {
@@ -30,8 +37,27 @@ export default class BlackHole extends Component {
     }
   }
 
+  componentWillUnmount() {
+    this.brush.destroy()
+  }
+
+  initBrush() {
+    if (this.state.startBrush) {
+      return
+    }
+    this.setState({ startBrush: true }, () => {
+      const canvas = findDOMNode(this).querySelector('canvas')
+      this.brush = new BrushCanvas(canvas, this.coverImg, () => {
+        this.setState({ showWindow: true })
+        this.brush.destroy()
+        setTimeout(() => this.props.nextPage(true), 3000)
+      })
+      this.brush.init()
+    })
+  }
+
   render() {
-    const { hasEnter, showCity, showBlackHole } = this.state
+    const { hasEnter, showBlackHole, startBrush, showWindow } = this.state
 
     return (
       <div className={`${hasEnter ? 'boom' : ''}`}>
@@ -50,24 +76,33 @@ export default class BlackHole extends Component {
         }
         {
           hasEnter &&
-            <AnmElement
-              className="blackhole-chemney"
-              onRest={() => this.setState({ showBlackHole: false })}
-            >
+            <div onTouchStart={::this.initBrush}>
               {
-                showCity &&
+                !startBrush &&
+                  <AnmElement
+                    className="blackhole-chemney"
+                    onRest={() => this.setState({ showBlackHole: false })}
+                  />
+              }
+              {
+                !startBrush &&
+                  <AnmElement
+                    className="blackhole-hand-btn"
+                  />
+              }
+              {
+                startBrush &&
                   <AnmElement className="blackhole-city">
-                    <AnmElement className="blackhole-window" />
+                    {showWindow && <AnmElement className="blackhole-window" />}
                   </AnmElement>
               }
               {
-                !showCity &&
-                  <AnmElement
-                    className="blackhole-hand-btn"
-                    onClick={() => this.setState({ showCity: true })}
-                  />
+                startBrush && !showWindow &&
+                  <AnmElement className="blackhole-canvas-wrap">
+                    <canvas width={320} height={514} />
+                  </AnmElement>
               }
-            </AnmElement>
+            </div>
         }
       </div>
     )

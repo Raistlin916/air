@@ -65,6 +65,8 @@
   bottom: 0;
   opacity: 0;
   transform: scale(0.01);
+  background-size: 320px 514px;
+  background-position: center top;
   background-image: url(http://img.yzcdn.cn/public_files/2016/05/27/b3dbdb8525bd497f2c399218c1b34be7.gif);
 }
 
@@ -106,6 +108,13 @@
   transform: translate3d(-50%, -80px, 0);
   background-image: url(http://img.yzcdn.cn/public_files/2016/05/27/bc1e644707f3a63c0066e307a1289988.png);
   opacity: 0;
+}
+
+.blackhole-canvas-wrap {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .past, .active {
