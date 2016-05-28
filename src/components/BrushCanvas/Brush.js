@@ -3,7 +3,7 @@ export default class Brush {
     this.ctx = ctx
     this.ctx.lineCap = 'round'
     this.ctx.lineJoin = 'bevel'
-    this.ctx.lineWidth = 30
+    this.ctx.lineWidth = 45
     this.ctx.strokeStyle = 'white'
     this.currentPoints = []
     this.strokes = []

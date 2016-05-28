@@ -44,7 +44,6 @@ export default class App extends React.Component {
   }
 
   nextPage(force) {
-    console.log(1)
     if (this.isDeaf && !force) {
       return;
     }

@@ -120,15 +120,15 @@
 .past, .active {
   .blackhole-text1 {
     animation: .3s fadeIn ease-out forwards 1s,
-      1s whirlpool ease-in-out forwards 3.5s;
+      2.5s whirlpool ease-in-out forwards 2s;
   }
   .blackhole-text2 {
-    animation: .3s fadeIn ease-out forwards 2s,
-      1.5s whirlpool ease-in-out forwards 3.6s;
+    animation: .3s fadeIn ease-out forwards 1s,
+      2.5s whirlpool ease-in-out forwards 5s;
   }
   .blackhole-text3 {
-    animation: .3s fadeIn ease-out forwards 3s,
-      2s whirlpool ease-in-out forwards 3.7s;
+    animation: .3s fadeIn ease-out forwards 1s,
+      2.5s whirlpool ease-in-out forwards 7s;
   }
 
   .blackhole-star {
@@ -137,7 +137,7 @@
 
   .blackhole-btn {
     animation:
-      .5s fadeIn ease-out forwards 5s,
+      .5s fadeIn ease-out forwards 9s,
       2s blackholeBtn ease-in-out infinite alternate 5s;
   }
 
