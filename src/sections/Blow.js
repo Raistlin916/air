@@ -30,9 +30,11 @@ export default class Blow extends Component {
   }
 
   blow() {
-    this.setState({
-      hasBlow: true
-    })
+    setTimeout(() =>
+      this.setState({
+        hasBlow: true
+      })
+    , 1000)
   }
 
   render() {
@@ -44,7 +46,7 @@ export default class Blow extends Component {
         <AnmElement className="blow-text1" />
         <div className="blow-bottom-action">
           <AnmElement className="blow-text2" />
-          <AnmElement className="circle-btn" onClick={::this.blow} />
+          <AnmElement className="circle-btn" onTouchStart={::this.blow} />
         </div>
       </AnmElement>
     )
