@@ -11,27 +11,6 @@ export default class Start2 extends Component {
     setDeaf: PropTypes.func
   };
 
-  componentDidMount() {
-    if (this.props.active) {
-      this.init()
-    }
-  }
-
-  componentWillReceiveProps({ active }) {
-    if (active) {
-      this.init()
-    }
-  }
-
-  init() {
-    if (this.inited) {
-      return
-    }
-    this.inited = true
-    this.props.setDeaf(true)
-    setTimeout(() => this.props.nextPage(true), 4000)
-  }
-
   render() {
     return (
       <AnmElement className="section-start3-bg">

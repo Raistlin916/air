@@ -2,8 +2,7 @@ export default class Brush {
   constructor(ctx, onFinish) {
     this.ctx = ctx
     this.ctx.lineCap = 'round'
-    this.ctx.lineJoin = 'bevel'
-    this.ctx.lineWidth = 45
+    this.ctx.lineWidth = 60
     this.ctx.strokeStyle = 'white'
     this.currentPoints = []
     this.strokes = []

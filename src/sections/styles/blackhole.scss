@@ -64,7 +64,7 @@
   right: 0;
   bottom: 0;
   opacity: 0;
-  transform: scale(0.01);
+  //transform: scale(0.01);
   background-size: 320px 514px;
   background-position: center top;
   background-image: url(http://img.yzcdn.cn/public_files/2016/05/27/b3dbdb8525bd497f2c399218c1b34be7.gif);
@@ -148,7 +148,8 @@
     }
 
     .blackhole-chemney {
-      animation: .75s blackHoleZoomIn ease-in forwards;
+      //animation: .75s blackHoleZoomIn ease-in forwards;
+      animation: .75s fadeIn ease-in forwards;
     }
 
     .blackhole-hand-btn {
