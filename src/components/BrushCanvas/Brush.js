@@ -43,7 +43,7 @@ export default class Brush {
     this.currentPoints = []
 
     const totalPts = this.strokes.reduce((sum, item) => sum + item.length, 0)
-    if (totalPts > 100) {
+    if (totalPts > 60) {
       this.onFinish()
     }
   }

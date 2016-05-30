@@ -94,9 +94,10 @@ export default class BlackHole extends Component {
               }
               {
                 brushCache && startBrush &&
-                  <AnmElement className="blackhole-city">
+                  <div>
+                    <AnmElement className={`blackhole-city ${showWindow ? 'show-window' : ''}`} />
                     {showWindow && <AnmElement className="blackhole-window" />}
-                  </AnmElement>
+                  </div>
               }
               {
                 startBrush && !showWindow &&
