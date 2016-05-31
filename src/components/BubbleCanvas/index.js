@@ -3,7 +3,7 @@ import Bubble from './Bubble'
 
 function screenAdapter(coord) {
   const originSize = { width: 320, height: 514 }
-  const scale = Math.min(window.screen.width, 500) / originSize.width
+  const scale = Math.min(window.innerWidth, 500) / originSize.width
 
   return {
     pageX: coord.pageX / scale,
