@@ -118,15 +118,15 @@
 .past, .active {
   .blackhole-text1 {
     animation: .3s fadeIn ease-out forwards 1s,
-      10s whirlpool1 linear forwards 1s;
+      7s whirlpool1 ease forwards 1s;
   }
   .blackhole-text2 {
     animation: .3s fadeIn ease-out forwards 1s,
-      10s whirlpool2 linear forwards 1s;
+      8s whirlpool2 ease forwards 1s;
   }
   .blackhole-text3 {
     animation: .3s fadeIn ease-out forwards 1s,
-      10s whirlpool3 linear forwards 1s;
+      9s whirlpool3 ease forwards 1s;
   }
 
   .blackhole-star {
@@ -189,14 +189,8 @@
   0% {
     transform: rotate(0) scale(1);
   }
-  25% {
-    transform: rotate(180deg) scale(1);
-  }
-  35% {
-    transform: rotate(252deg) scale(0);
-  }
   100% {
-    transform: rotate(720deg) scale(0);
+    transform: rotate(360deg) scale(0);
   }
 }
 
@@ -204,14 +198,8 @@
   0% {
     transform: rotate(0) scale(1);
   }
-  40% {
-    transform: rotate(288deg) scale(1);
-  }
-  48% {
-    transform: rotate(345.6deg) scale(0);
-  }
   100% {
-    transform: rotate(720deg) scale(0);
+    transform: rotate(360deg) scale(0);
   }
 }
 
@@ -219,14 +207,8 @@
   0% {
     transform: rotate(0) scale(1);
   }
-  55% {
-    transform: rotate(396deg) scale(1);
-  }
-  61% {
-    transform: rotate(439.2deg) scale(0);
-  }
   100% {
-    transform: rotate(720deg) scale(0);
+    transform: rotate(360deg) scale(0);
   }
 }
 
