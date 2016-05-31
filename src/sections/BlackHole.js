@@ -61,7 +61,7 @@ export default class BlackHole extends Component {
           this.setState({ showWindow: true })
         }, 1500)
         this.brush.destroy()
-        setTimeout(() => this.props.nextPage(true), 3500)
+        setTimeout(() => this.props.nextPage(true), 2000)
       })
       this.brush.init()
     })
@@ -103,8 +103,7 @@ export default class BlackHole extends Component {
               {
                 brushCache && startBrush &&
                   <div>
-                    <AnmElement className={`blackhole-city ${showWindow ? 'show-window' : ''}`} />
-                    {showWindow && <AnmElement className="blackhole-window" />}
+                    <AnmElement className="blackhole-city" />
                   </div>
               }
               {
