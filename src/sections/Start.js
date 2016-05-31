@@ -18,7 +18,7 @@ export default class Start extends Component {
     }
     this.inited = true
     this.props.setDeaf(true)
-    setTimeout(() => this.props.nextPage(true), 1000)
+    setTimeout(() => this.props.nextPage(true), 300)
   }
 
   render() {
