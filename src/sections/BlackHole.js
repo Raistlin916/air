@@ -57,9 +57,11 @@ export default class BlackHole extends Component {
     this.setState({ startBrush: true }, () => {
       const canvas = findDOMNode(this).querySelector('canvas')
       this.brush = new BrushCanvas(canvas, this.coverImg, () => {
-        this.setState({ showWindow: true })
+        setTimeout(() => {
+          this.setState({ showWindow: true })
+        }, 1500)
         this.brush.destroy()
-        setTimeout(() => this.props.nextPage(true), 3000)
+        setTimeout(() => this.props.nextPage(true), 3500)
       })
       this.brush.init()
     })

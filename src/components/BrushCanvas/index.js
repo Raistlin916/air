@@ -98,6 +98,7 @@ export default class BrushEffect {
   }
 
   destroy() {
+    this.canvas.width = this.canvas.width
     this.canvas.removeEventListener('mousedown', this.startListener)
     this.canvas.removeEventListener('mousemove', this.moveListener)
     this.canvas.removeEventListener('mouseup', this.endListener)
