@@ -22,7 +22,7 @@ export default class BlackHole extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      hasEnter: true,
+      hasEnter: false,
       showBlackHole: true,
       startBrush: false,
       showWindow: false,
