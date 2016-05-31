@@ -29,7 +29,7 @@ export default class Start2 extends Component {
     }
     this.inited = true
     this.props.setDeaf(true)
-    setTimeout(() => this.props.nextPage(true), 3000)
+    setTimeout(() => this.props.nextPage(true), 4000)
   }
 
   render() {

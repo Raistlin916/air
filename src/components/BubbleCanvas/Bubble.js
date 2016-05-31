@@ -12,7 +12,7 @@ export default class Bubble {
   constructor(ctx) {
     this.ctx = ctx
     this.coord = { x: null, y: null }
-    this.maxRadius = 50
+    this.maxRadius = 60
     this.animationPercent = 0
   }
 
