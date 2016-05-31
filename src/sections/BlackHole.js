@@ -15,11 +15,10 @@ export default class BlackHole extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      hasEnter: false,
+      hasEnter: true,
       showBlackHole: true,
       startBrush: false,
-      showWindow: false,
-      brushCache: false
+      showWindow: false
     }
 
     this.coverImg = new Image()
@@ -46,7 +45,6 @@ export default class BlackHole extends Component {
     if (this.state.startBrush) {
       return
     }
-    setTimeout(() => this.setState({ brushCache: true }), 500)
     this.setState({ startBrush: true }, () => {
       const canvas = findDOMNode(this).querySelector('canvas')
       this.brush = new BrushCanvas(canvas, this.coverImg, () => {
@@ -60,7 +58,7 @@ export default class BlackHole extends Component {
 
   render() {
     const { hasEnter, showBlackHole, startBrush, brushCache, showWindow } = this.state
-
+    console.log('render')
     return (
       <div className={`${hasEnter ? 'boom' : ''}`}>
         {
@@ -80,7 +78,7 @@ export default class BlackHole extends Component {
           hasEnter &&
             <div onTouchStart={::this.initBrush}>
               {
-                (brushCache && startBrush) ||
+                startBrush ||
                   <AnmElement
                     className="blackhole-chemney"
                     onRest={() => this.setState({ showBlackHole: false })}
@@ -93,7 +91,7 @@ export default class BlackHole extends Component {
                   />
               }
               {
-                brushCache && startBrush &&
+                startBrush &&
                   <div>
                     <AnmElement className={`blackhole-city ${showWindow ? 'show-window' : ''}`} />
                     {showWindow && <AnmElement className="blackhole-window" />}
