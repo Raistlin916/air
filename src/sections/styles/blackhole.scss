@@ -64,7 +64,6 @@
   right: 0;
   bottom: 0;
   opacity: 0;
-  //transform: scale(0.01);
   background-size: 320px 514px;
   background-position: center top;
   background-image: url(http://img.yzcdn.cn/public_files/2016/05/27/b3dbdb8525bd497f2c399218c1b34be7.gif);
@@ -120,15 +119,15 @@
 .past, .active {
   .blackhole-text1 {
     animation: .3s fadeIn ease-out forwards 1s,
-      2.5s whirlpool ease-in-out forwards 2s;
+      10s whirlpool1 linear forwards 1s;
   }
   .blackhole-text2 {
     animation: .3s fadeIn ease-out forwards 1s,
-      2.5s whirlpool ease-in-out forwards 5s;
+      10s whirlpool2 linear forwards 1s;
   }
   .blackhole-text3 {
     animation: .3s fadeIn ease-out forwards 1s,
-      2.5s whirlpool ease-in-out forwards 7s;
+      10s whirlpool3 linear forwards 1s;
   }
 
   .blackhole-star {
@@ -137,7 +136,7 @@
 
   .blackhole-btn {
     animation:
-      .5s fadeIn ease-out forwards 9s,
+      .5s fadeIn ease-out forwards 7s,
       2s blackholeBtn ease-in-out infinite alternate 5s;
   }
 
@@ -186,14 +185,48 @@
   }
 }
 
-@keyframes whirlpool {
+@keyframes whirlpool1 {
   0% {
     transform: rotate(0) scale(1);
-    opacity: 1;
+  }
+  25% {
+    transform: rotate(180deg) scale(1);
+  }
+  35% {
+    transform: rotate(252deg) scale(0);
   }
   100% {
-    transform: rotate(360deg) scale(0);
-    opacity: .6;
+    transform: rotate(720deg) scale(0);
+  }
+}
+
+@keyframes whirlpool2 {
+  0% {
+    transform: rotate(0) scale(1);
+  }
+  40% {
+    transform: rotate(288deg) scale(1);
+  }
+  48% {
+    transform: rotate(345.6deg) scale(0);
+  }
+  100% {
+    transform: rotate(720deg) scale(0);
+  }
+}
+
+@keyframes whirlpool3 {
+  0% {
+    transform: rotate(0) scale(1);
+  }
+  55% {
+    transform: rotate(396deg) scale(1);
+  }
+  61% {
+    transform: rotate(439.2deg) scale(0);
+  }
+  100% {
+    transform: rotate(720deg) scale(0);
   }
 }
 

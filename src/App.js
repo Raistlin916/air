@@ -8,7 +8,7 @@ import Start3 from './sections/Start3'
 import BlackHole from './sections/BlackHole'
 import Lung from './sections/Lung'
 import Blow from './sections/Blow'
-import Spring from './sections/seasons/Spring'
+//import Spring from './sections/seasons/Spring'
 import Summer from './sections/seasons/Summer'
 import Autumn from './sections/seasons/Autumn'
 import Winter from './sections/seasons/Winter'
@@ -26,7 +26,7 @@ export default class App extends React.Component {
 
   constructor(props) {
     super(props)
-    this.pages = [Start, Start2, Start3, BlackHole, Lung, Blow, Spring, Summer, Autumn, Winter, End]
+    this.pages = [Start, Start2, Start3, BlackHole, Lung, Blow, /*Spring,*/ Summer, Autumn, Winter, End]
     this.isDeaf = false
     this.resourceList = resources.list
   }
@@ -34,10 +34,6 @@ export default class App extends React.Component {
   state = {
     currentPage: +location.hash.split('debug')[1] || 0
   };
-
-  onPageChangeEnd(currentPage, page) {
-
-  }
 
   setDeaf(bool) {
     this.isDeaf = bool
@@ -81,7 +77,6 @@ export default class App extends React.Component {
       <div>
         <FullPage
           pages={pages} currentPage={currentPage} nextPage={nextPage}
-          onPageChangeEnd={::this.onPageChangeEnd}
         />
         {
           debug && <button

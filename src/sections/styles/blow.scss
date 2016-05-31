@@ -63,6 +63,10 @@
   }
 
   .blowwed {
+    &.blow-bg {
+      animation: .5s fadeOut ease-out forwards 4.25s;
+    }
+
     .blow-text1, .blow-bottom-action,
     .blow-fog2, .blow-fog3 {
       opacity: 1;

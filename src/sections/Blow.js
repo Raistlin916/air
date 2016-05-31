@@ -1,12 +1,14 @@
 import React, { Component, PropTypes } from 'react'
 import AnmElement from '../components/AnmElement'
+import Spring from './seasons/Spring'
 import './styles/blow.scss'
 
 export default class Blow extends Component {
 
   static propTypes = {
     nextPage: PropTypes.func,
-    setDeaf: PropTypes.func
+    setDeaf: PropTypes.func,
+    active: PropTypes.bool
   };
 
   state = {
@@ -26,7 +28,7 @@ export default class Blow extends Component {
   }
 
   onFogDisapear() {
-    setTimeout(() => this.props.nextPage(true), 1000)
+    setTimeout(() => this.props.nextPage(true), 2000)
   }
 
   blow() {
@@ -40,15 +42,18 @@ export default class Blow extends Component {
   render() {
     const { hasBlow } = this.state
     return (
-      <AnmElement className={`blow-bg ${hasBlow ? 'blowwed' : ''}`}>
-        <AnmElement className="blow-fog2" onRest={::this.onFogDisapear} />
-        <AnmElement className="blow-fog3" />
-        <AnmElement className="blow-text1" />
-        <div className="blow-bottom-action">
-          <AnmElement className="blow-text2" />
-          <AnmElement className="circle-btn" onTouchStart={::this.blow} />
-        </div>
-      </AnmElement>
+      <div>
+        {hasBlow && <Spring />}
+        <AnmElement className={`blow-bg ${hasBlow ? 'blowwed' : ''}`}>
+          <AnmElement className="blow-fog2" onRest={::this.onFogDisapear} />
+          <AnmElement className="blow-fog3" />
+          <AnmElement className="blow-text1" />
+          <div className="blow-bottom-action">
+            <AnmElement className="blow-text2" />
+            <AnmElement className="circle-btn" onTouchStart={::this.blow} />
+          </div>
+        </AnmElement>
+      </div>
     )
   }
 }

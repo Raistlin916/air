@@ -12,25 +12,13 @@ export default class Start extends Component {
     setDeaf: PropTypes.func
   };
 
-  componentDidMount() {
-    if (this.props.active) {
-      this.init()
-    }
-  }
-
-  componentWillReceiveProps({ active }) {
-    if (active) {
-      this.init()
-    }
-  }
-
   init() {
     if (this.inited) {
       return
     }
     this.inited = true
     this.props.setDeaf(true)
-    setTimeout(() => this.props.nextPage(true), 3000)
+    setTimeout(() => this.props.nextPage(true), 1000)
   }
 
   render() {
