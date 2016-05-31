@@ -4,6 +4,13 @@ import './styles/blackhole.scss'
 import AnmElement from '../components/AnmElement'
 import BrushCanvas from '../components/BrushCanvas'
 
+
+const canvasWrap = (
+  <AnmElement className="blackhole-canvas-wrap">
+    <canvas width={320} height={514} />
+  </AnmElement>
+)
+
 export default class BlackHole extends Component {
 
   static propTypes = {
@@ -18,7 +25,8 @@ export default class BlackHole extends Component {
       hasEnter: true,
       showBlackHole: true,
       startBrush: false,
-      showWindow: false
+      showWindow: false,
+      brushCache: false
     }
 
     this.coverImg = new Image()
@@ -45,6 +53,7 @@ export default class BlackHole extends Component {
     if (this.state.startBrush) {
       return
     }
+    setTimeout(() => this.setState({ brushCache: true }), 500)
     this.setState({ startBrush: true }, () => {
       const canvas = findDOMNode(this).querySelector('canvas')
       this.brush = new BrushCanvas(canvas, this.coverImg, () => {
@@ -58,7 +67,6 @@ export default class BlackHole extends Component {
 
   render() {
     const { hasEnter, showBlackHole, startBrush, brushCache, showWindow } = this.state
-    console.log('render')
     return (
       <div className={`${hasEnter ? 'boom' : ''}`}>
         {
@@ -78,7 +86,7 @@ export default class BlackHole extends Component {
           hasEnter &&
             <div onTouchStart={::this.initBrush}>
               {
-                startBrush ||
+                (brushCache && startBrush) ||
                   <AnmElement
                     className="blackhole-chemney"
                     onRest={() => this.setState({ showBlackHole: false })}
@@ -91,17 +99,14 @@ export default class BlackHole extends Component {
                   />
               }
               {
-                startBrush &&
+                brushCache && startBrush &&
                   <div>
                     <AnmElement className={`blackhole-city ${showWindow ? 'show-window' : ''}`} />
                     {showWindow && <AnmElement className="blackhole-window" />}
                   </div>
               }
               {
-                startBrush && !showWindow &&
-                  <AnmElement className="blackhole-canvas-wrap">
-                    <canvas width={320} height={514} />
-                  </AnmElement>
+                startBrush && !showWindow && canvasWrap
               }
             </div>
         }
