@@ -15,7 +15,7 @@ export default class BlackHole extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      hasEnter: false,
+      hasEnter: true,
       showBlackHole: true,
       startBrush: false,
       showWindow: false,

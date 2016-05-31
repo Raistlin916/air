@@ -156,6 +156,7 @@
   }
 
   .blackhole-window {
+    transform-origin: 45% 45%;
     animation: .75s fadeIn ease-in forwards,
       1s scaleWindow ease-out forwards 1s;
   }
