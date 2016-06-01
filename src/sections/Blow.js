@@ -37,6 +37,12 @@ export default class Blow extends Component {
         hasBlow: true
       })
     , 1000)
+
+    setTimeout(() => {
+      const audio = new Audio()
+      audio.src = 'http://img.yzcdn.cn/wind_blow.wav'
+      audio.play()
+    }, 300)
   }
 
   render() {
