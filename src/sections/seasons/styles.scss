@@ -142,3 +142,25 @@
     filter: grayscale(1);
   }
 }
+
+.bottom-arrow {
+  width: 50px;
+  height: 50px;
+  left: 50%;
+  margin-left: -25px;
+  bottom: 50px;
+  background-image: url(http://img.yzcdn.cn/arrow_air.svg);
+  fill: white;
+  animation: 3s ease bottomArrow infinite;
+}
+
+@keyframes bottomArrow {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 30px, 0);
+    opacity: 0;
+  }
+}
