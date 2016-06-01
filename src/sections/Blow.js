@@ -32,6 +32,10 @@ export default class Blow extends Component {
   }
 
   blow() {
+    if (this.blowRunned) {
+      return
+    }
+    this.blowRunned = true
     setTimeout(() =>
       this.setState({
         hasBlow: true
