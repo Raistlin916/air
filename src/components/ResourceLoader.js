@@ -30,14 +30,19 @@ export default class ResourceLoader extends Component {
     let loadedNum = 0
     const ps = list.map(item =>
       new Promise(resolve => {
-        const img = new Image
-        img.src = item.src
-        img.onload = img.onerror = () => {
+        let rc
+        if (item.src.indexOf('.mp3') !== -1 || item.src.indexOf('.wav') !== -1) {
+          rc = new Audio()
+        } else {
+          rc = new Image()
+        }
+        rc.src = item.src
+        rc.onload = rc.onerror = () => {
           loadedNum ++
           const percent = parseInt(loadedNum / list.length * 100, 10)
           this.setState({ percent })
           this.props.onProgress(percent)
-          this.resources[item.name] = img
+          this.resources[item.name] = rc
           resolve()
         }
       })

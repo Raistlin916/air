@@ -15,6 +15,9 @@ files.forEach(file => {
   const r = content.toString().match(uri_pattern)
   if (r) {
     r.forEach(item => {
+      if (item.indexOf('.mp3') !== -1 || item.indexOf('.wav') !== -1) {
+        return
+      }
       result[item] = true
     })
   }
