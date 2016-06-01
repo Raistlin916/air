@@ -8,7 +8,7 @@ import App from './App.js'
 //import './utils/wx'
 import MusicPlayer from './utils/music_player'
 setTimeout(() => {
-  new MusicPlayer('http://img.yzcdn.cn/public_files/music/Parasail.mp3')
+  new MusicPlayer('http://img.yzcdn.cn/air_music.mp3')
 }, 1000)
 
 ReactDom.render(<App />, document.getElementById('container'))
