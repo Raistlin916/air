@@ -43,7 +43,7 @@ export default class Blow extends Component {
     const { hasBlow } = this.state
     return (
       <div>
-        {hasBlow && <Spring />}
+        <Spring />
         <AnmElement className={`blow-bg ${hasBlow ? 'blowwed' : ''}`}>
           <AnmElement className="blow-fog2" onRest={::this.onFogDisapear} />
           <AnmElement className="blow-fog3" />
