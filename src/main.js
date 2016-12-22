@@ -12,12 +12,18 @@ import App from './App.js'
 // }, 1000)
 
 const audio = new Audio()
-document.body.addEventListener('touchstart', () => {
+audio.src = 'http://img.yzcdn.cn/air_music_2.mp3'
+audio.autoplay = true
+
+function playMusic() {
   if (audio.duration > 0 && !audio.paused) {
     return
   }
-  audio.src = 'http://img.yzcdn.cn/air_music_2.mp3'
   audio.play()
-})
+}
+document.body.addEventListener('touchstart', playMusic)
+audio.addEventListener('canplay', playMusic)
+document.addEventListener('WeixinJSBridgeReady', playMusic, false)
 
 ReactDom.render(<App />, document.getElementById('container'))
+
